@@ -1,12 +1,10 @@
-import {useModal} from '../context/index';
+import {useModal} from '../context/modals-context';
 
 export const Navbar = () => {
 //modal context
-const{modalDispatch}=useModal();
+const{showModal}=useModal();
 const handleSignUpBtn=()=>{
-modalDispatch({
-  type:"IS_SIGNUP_MODAL_OPEN"
-})
+  showModal();
 }
 
   return (

@@ -1,5 +1,5 @@
 import { Navbar,SignUp } from "../components/index";
-import {useModal} from '../context/index';
+import {useModal} from '../context/modals-context';
 
 export const  Home= ()=> {
      //modal context
