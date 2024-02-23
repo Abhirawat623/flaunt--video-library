@@ -1,4 +1,4 @@
-import { Navbar,SignUp } from "../components/index";
+import { Navbar,SignUp,VideoCard } from "../components/index";
 import {useModal} from '../context/modals-context';
 
 export const  Home= ()=> {
@@ -8,6 +8,7 @@ export const  Home= ()=> {
     <div className="bg-blue">
       <Navbar/>
       {isSignUpModalOpen&&<SignUp/>}
+      <VideoCard/>
     </div>
   )
 }
