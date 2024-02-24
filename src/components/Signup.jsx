@@ -10,7 +10,7 @@ export const SignUp = () => {
   return (
     <div
       className="bg-black p-6 xl:w-96 xl:h-102 h-100 w-80 
-    mx-auto flex flex-col items-center justify-between rounded-lg relative"
+    mx-auto flex flex-col items-center justify-between rounded-lg relative index-4"
     >
       <div className=" flex flex-col items-center">
         <h2 className="text-white text-2xl font-bold ">Sign Up</h2>{" "}
