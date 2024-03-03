@@ -1,19 +1,21 @@
 import { useModal } from "../context/modals-context";
 export const SignUp = () => {
   //to close signup modal
-  const { hideModal,showModal} = useModal();
+  const { setIsSignUpModalOpen,setIsLoginModalOpen} = useModal();
 
   const handleSignupModalClose = () => {
-    hideModal();
+    setIsSignUpModalOpen(false);
+
   };
 //for login modal open
 const handleLoginOpen=()=>{
- showModal()
+  setIsLoginModalOpen(true);
+  setIsSignUpModalOpen(false)
 }
   return (
     <div
-      className="bg-black p-6 xl:w-96 xl:h-102 h-100 w-80 
-    top-32 left-9 xl:left-102 xl:top-24 flex flex-col items-center justify-between rounded-lg sticky z-20"
+      className="bg-black  p-6 xl:w-96 xl:h-102 h-100 w-80  
+    top-32 left-9 xl:left-102 xl:top-24 flex flex-col items-center justify-between rounded-lg fixed z-20"
     >
       <div className=" flex flex-col items-center">
         <h2 className="text-white text-2xl font-bold ">Sign Up</h2>{" "}

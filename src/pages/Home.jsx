@@ -3,13 +3,15 @@ import {useModal} from '../context/modals-context';
 
 export const  Home= ()=> {
      //modal context
-     const {isModalOpen}=useModal();
+     const {isSignUpModalOpen ,isLoginModalOpen}=useModal();
   return (
     <div className="bg-blue">
       <Navbar/>
-      {isModalOpen && <SignUp />}
-      {isModalOpen && <Loginpage/>}
+      
+      {isSignUpModalOpen && <SignUp/>}
+      {isLoginModalOpen && <Loginpage/>}
       <VideoContainer />
+      
     </div>
   )
 }

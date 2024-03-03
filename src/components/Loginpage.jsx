@@ -1,17 +1,17 @@
 import { useModal } from "../context/modals-context"
 export const Loginpage = ()=>{
  //to close login modal
- const closeModal= useModal;
+ const { setIsLoginModalOpen}= useModal();
 
  const handleLoginModalClose=()=>{
-    closeModal()
+    setIsLoginModalOpen(false);
  }
 return (
     <div
-    className="bg-black p-6 xl:w-96 xl:h-102 h-100 w-80 
-  top-32 left-9 xl:left-102 xl:top-24 flex flex-col items-center justify-between rounded-lg sticky z-10"
+    className="bg-black  p-6 xl:w-96 xl:h-66 h-66 w-80 
+  top-56 left-9 xl:left-102 xl:top-46 flex flex-col items-center justify-between rounded-lg fixed z-10"
   >
-    <div className=" flex flex-col items-center">
+    <div className=" flex flex-col items-center ">
       <h2 className="text-white text-2xl font-bold ">Login</h2>{" "}
       <span
         className="text-white text-4xl absolute top-1 right-1 cursor-pointer"
@@ -35,7 +35,7 @@ return (
     </div>
     <form
       // onSubmit={handleFormSubmit}
-      className="flex flex-col items-center gap-y-2 xl:text-xl"
+      className="flex flex-col items-center gap-y-1 xl:text-xl"
     >
       <div className="flex flex-col items-center">
         <label className="flex flex-col text-white ml-l">E-mail*</label>
@@ -58,15 +58,15 @@ return (
           // defaultValue={password}
         />
       </div>
-      
-    </form>
-    <button
+      <button
       className=" text-white bg-green-800 xl:w-80 w-72 p-0.5 
                hover:bg-green-600 hover:text-white h-10 rounded-md
                text-base xl:text-lg cursor-pointer"
     >
       Create Account
     </button>
+    </form>
+    
   </div>
 
 
