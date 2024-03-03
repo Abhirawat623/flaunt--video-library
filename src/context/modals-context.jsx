@@ -7,13 +7,13 @@ const initialValue = {
 const ModalContext = createContext(initialValue);
 
 const ModalProvider = ({children}) => {
-  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+  const [isModalOpen, setIsSignUpModalOpen] = useState(false);
 
   const showModal = () => setIsSignUpModalOpen(true);
   const hideModal = () => setIsSignUpModalOpen(false);
 
   return (
-    <ModalContext.Provider value={{ isSignUpModalOpen, showModal, hideModal }}>
+    <ModalContext.Provider value={{ isModalOpen, showModal, hideModal }}>
       {children}
     </ModalContext.Provider>
   );

@@ -1,16 +1,19 @@
 import { useModal } from "../context/modals-context";
 export const SignUp = () => {
   //to close signup modal
-  const { hideModal } = useModal();
+  const { hideModal,showModal} = useModal();
 
   const handleSignupModalClose = () => {
     hideModal();
   };
-
+//for login modal open
+const handleLoginOpen=()=>{
+ showModal()
+}
   return (
     <div
       className="bg-black p-6 xl:w-96 xl:h-102 h-100 w-80 
-    mx-auto flex flex-col items-center justify-between rounded-lg relative index-4"
+    top-32 left-9 xl:left-102 xl:top-24 flex flex-col items-center justify-between rounded-lg sticky z-20"
     >
       <div className=" flex flex-col items-center">
         <h2 className="text-white text-2xl font-bold ">Sign Up</h2>{" "}
@@ -59,6 +62,17 @@ export const SignUp = () => {
           />
         </div>
         <div className="flex flex-col items-center">
+          <label className="text-white  ">Mobile Number*</label>
+          <input
+            className=" p-0.5 rounded-md xl:w-80 w-72 cursor-pointer"
+            placeholder="Enter Mobile Number"
+            maxLength={10}
+            required
+            //   defaultValue={number}
+            //   onChange={handleMobileSignupChange}
+          />
+        </div>
+        <div className="flex flex-col items-center">
           <label className=" text-white ml-l">Password*</label>
           <input
             className=" p-0.5 rounded-md xl:w-80 w-72 cursor-pointer"
@@ -80,18 +94,7 @@ export const SignUp = () => {
             // defaultValue={confirmPassword}
           />
         </div>
-        <div className="flex flex-col items-center">
-          <label className="text-white  ">Mobile Number*</label>
-          <input
-            className=" p-0.5 rounded-md xl:w-80 w-72 cursor-pointer"
-            placeholder="Enter Mobile Number"
-            maxLength={10}
-            required
-            //   defaultValue={number}
-            //   onChange={handleMobileSignupChange}
-          />
-        </div>
-      </form>
+        <div className=" flex flex-col items-center gap-y-1.5">
       <button
         className=" text-white bg-green-800 xl:w-80 w-72 p-0.5 
                  hover:bg-green-600 hover:text-white h-10 rounded-md
@@ -99,6 +102,17 @@ export const SignUp = () => {
       >
         Create Account
       </button>
+      <button 
+      onClick={handleLoginOpen}
+        className=" text-white bg-blue-800 xl:w-80 w-72 p-0.5 
+                 hover:bg-blue-600 hover:text-white h-10 rounded-md
+                 text-base xl:text-lg cursor-pointer"
+      >
+        Already have account
+      </button>
+      </div>
+      </form>
+      
     </div>
   );
 };

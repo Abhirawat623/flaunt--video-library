@@ -4,8 +4,11 @@ export default {
   theme: {
     extend: {
       height: {
-        '102': '30rem',
+        '102': '32rem',
         '100': '28rem',
+      },
+      spacing:{
+        '102':'34rem'
       },
       width: {
         '58': '12.6rem',

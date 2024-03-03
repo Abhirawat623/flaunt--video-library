@@ -1,14 +1,15 @@
-import { Navbar,SignUp,VideoContainer } from "../components/index";
+import { Navbar,SignUp,VideoContainer,Loginpage } from "../components/index";
 import {useModal} from '../context/modals-context';
 
 export const  Home= ()=> {
      //modal context
-     const {isSignUpModalOpen}=useModal();
+     const {isModalOpen}=useModal();
   return (
     <div className="bg-blue">
       <Navbar/>
-      {isSignUpModalOpen&&<SignUp/>}
-      <VideoContainer/>
+      {isModalOpen && <SignUp />}
+      {isModalOpen && <Loginpage/>}
+      <VideoContainer />
     </div>
   )
 }
