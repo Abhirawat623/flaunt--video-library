@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { VideoCard } from "./videoCard";
+import { VideoCard } from "./VideoCard";
 export const VideoContainer=()=>{
     const [videos,setVideos] = useState([]);
 useEffect(()=>{
@@ -15,9 +15,10 @@ useEffect(()=>{
     })()
 },[]);
     return(
-       
+      
         
             videos.map((video)=>(<VideoCard items={video} key={video._id}/>))
+           
         
     )
 }
