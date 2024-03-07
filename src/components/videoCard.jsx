@@ -2,7 +2,7 @@
 export const VideoCard = ({items}) => {
   const {title,_id,category,description} = items;
     return(
-        <div className="max-w-md mx-auto bg-white rounded-l shadow-xl
+        <div className="max-w-md mx-auto bg-white rounded-l shadow-xl 
          overflow-hidden md:max-w-4xl md:max-h-4xl z-0 ">
         <div className="md:flex">
           <div className="md:flex-shrink-0">

@@ -1,4 +1,4 @@
-import { Navbar,SignUp,VideoContainer,Loginpage, CategoriesContainer } from "../components/index";
+import { Navbar,SignUp,VideoContainer,Loginpage, CategoriesContainer, BottomBar } from "../components/index";
 import {useModal} from '../context/modals-context';
 
 export const  Home= ()=> {
@@ -10,8 +10,10 @@ export const  Home= ()=> {
       
       {isSignUpModalOpen && <SignUp/>}
       {isLoginModalOpen && <Loginpage/>}
+      <BottomBar/>
       <CategoriesContainer/>
       <VideoContainer />
+     
       
       
     </div>
