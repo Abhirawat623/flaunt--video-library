@@ -1,8 +1,8 @@
 export const BottomBar = () => {
   return (
-    <div className="flex flex-row fixed bg-white p-0.5 xl:p-1 z-10 h-12 w-full bottom-0 justify-between items-center flex-wrap ">
+    <div className="flex flex-row fixed bg-zinc-800 text-white p-0.5 xl:p-1 z-10 h-11 w-full bottom-0 justify-between items-center flex-wrap ">
       {/* home icon */}
-      <div className="bg-white text-center">
+      <div className="cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -14,7 +14,7 @@ export const BottomBar = () => {
         </svg>
       </div>
       {/* liked icon */}
-      <div className="bg-white ">
+      <div className="cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -25,7 +25,7 @@ export const BottomBar = () => {
         </svg>
       </div>
       {/* history */}
-      <div className="bg-white">
+      <div className="cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ export const BottomBar = () => {
         </svg>
       </div>
       {/*playlist */}
-      <div className="bg-white ">
+      <div className="cursor-pointer ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -51,7 +51,7 @@ export const BottomBar = () => {
         </svg>
       </div>
       {/* archieved */}
-      <div className="bg-white ">
+      <div className="cursor-pointer ">
         
         <svg
           xmlns="http://www.w3.org/2000/svg"

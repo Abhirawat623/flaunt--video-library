@@ -1,1 +1,0 @@
-export {modalReducer} from '../reducer/modals-reducer';

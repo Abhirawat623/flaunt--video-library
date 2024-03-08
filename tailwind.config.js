@@ -5,7 +5,7 @@ export default {
     extend: {
       height: {
         '102': '32rem',
-        '100': '28rem',
+        '100': '28.5rem',
       },
       spacing:{
         '102':'34rem'

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { CategoriesColumn } from "./CategoriesColumn";
+import { CategoriesColumn } from "./Categoriesrow";
 export const CategoriesContainer = () => {
   const [categories, setCategories] = useState([]);
   const [numberOfCategories, setNumberOfCategories] = useState(0);
@@ -33,7 +33,7 @@ export const CategoriesContainer = () => {
   };
 
   return (
-    <div className="flex flex-row sticky top-0 bg-white p-0.5 xl:p-1 z-10 h-12 w-full bottom-0 justify-between items-center ">
+    <div className="flex flex-row sticky top-0  bg-zinc-800 text-white  p-0.5 xl:p-1 z-10 h-12 w-full bottom-0 justify-between items-center ">
       {/* when numbers are less than set shown catehories then only left button shows */}
       {numberOfCategories >= 3 && (
         <button onClick={handleLeftBtn}>

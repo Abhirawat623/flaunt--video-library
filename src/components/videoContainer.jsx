@@ -7,7 +7,7 @@ useEffect(()=>{
     
     ( async ()=>{
         try{
-            const {data} = await axios.get("https://flaunt-video-library-x9dn.vercel.app/api/videos");
+            const {data} = await axios.get("https://flaunt-video-library-x9dn.vercel.app/api/videos?category=");
             console.log(data);
             setVideos(data);
         }
@@ -15,10 +15,10 @@ useEffect(()=>{
     })()
 },[]);
     return(
-      
-        
-            videos.map((video)=>(<VideoCard items={video} key={video._id}/>))
-           
+      <div className="xl:grid xl:grid-cols-3 xl:gap-y-2  xl:pr-2 xl:pl-16">
+        {
+            videos.map((video)=>(<VideoCard items={video} key={video._id}/>))}
+            </div>
         
     )
 }
