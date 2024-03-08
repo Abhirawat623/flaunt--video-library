@@ -3,7 +3,7 @@ export const CategoriesColumn=({items})=>{
     return(
         <span className="border-2 border-solid border-black bg-zinc-950 
         text-white rounded-sm object-cover text-center
-        xl:w-24 xl:h-8 cursor-pointer ">
+         xl:h-8 cursor-pointer ">
 
             {categoryName}
         </span>
