@@ -22,9 +22,10 @@ useEffect(()=>{
     })()
 },[clickedCategory]);
     return(
-      <div className="xl:grid xl:grid-cols-3 xl:gap-y-2  xl:pr-2 xl:pl-16">
+      <div className="xl:grid xl:grid-cols-3 xl:gap-y-2  flex flex-col pt-3 gap-y-3 gap-x-3 pl-3 pr-3 pb-12">
         {
-            videos.map((video)=>(<VideoCard items={video} key={video._id}/>))}
+            videos.map((video)=>(<VideoCard items={video} key={video._id}/>))
+            }
             </div>
         
     )
