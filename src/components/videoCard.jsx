@@ -1,7 +1,16 @@
+import {useNavigate} from "react-router-dom";
+
 export const VideoCard = ({ items }) => {
-  const { title, image, length, views, channelName, icon } = items;
+  const { title, image, length, views, channelName, icon,_id } = items;
+
+  //to navigate for single card
+  const navigate =useNavigate();
+ const handleVideoClick=()=>{
+  navigate(`/videos/${_id}`)
+ }
+
   return (
-    <div className=" border-2 flex flex-col pb-1 rounded-l shadow-xl">
+    <div className=" border-2 flex flex-col pb-1 rounded-l shadow-xl" onClick={handleVideoClick}>
       <div >
         <img className="w-full " src={image} alt="content image" />
         <span className=" relative -top-10 left-96 text-slate-800 bg-white px-1 ">

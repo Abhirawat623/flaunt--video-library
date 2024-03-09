@@ -9,7 +9,7 @@ export const CategoriesContainer = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          "https://flaunt-video-library-x9dn.vercel.app/api/categories"
+          "https://flaunt-up-video-library-backend.vercel.app/api/categories"
         );
         console.log("cat" + data);
         //slicing for carousel
@@ -53,7 +53,7 @@ export const CategoriesContainer = () => {
       )}
 
       {categories.map((category) => (
-        <CategoriesColumn items={category} key={category.id} />
+        <CategoriesColumn items={category} key={category._id} />
       ))}
       {/* when no of categories are less than main categories then only right bnt shows up*/}
       {numberOfCategories < categories.length && (

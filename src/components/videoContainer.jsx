@@ -14,7 +14,7 @@ useEffect(()=>{
     
     ( async ()=>{
         try{
-            const {data} = await axios.get(`https://flaunt-video-library-x9dn.vercel.app/api/videos?category=${clickedCategory==="all"?"":clickedCategory}`);
+            const {data} = await axios.get(`https://flaunt-up-video-library-backend.vercel.app/api/videos?category=${clickedCategory==="all"?"":clickedCategory}`);
             console.log(data);
             setVideos(data);
         }
