@@ -9,7 +9,7 @@ export const Loginpage = ()=>{
 return (
     <div
     className="bg-zinc-800  p-6 xl:w-96 xl:h-66 h-66 w-80 
-  top-56 left-9 xl:left-102 xl:top-46 flex flex-col items-center justify-between rounded-lg fixed z-10"
+    top-2/4 left-2/4 translate  flex flex-col items-center justify-between rounded-lg fixed z-10"
   >
     <div className=" flex flex-col items-center ">
       <h2 className="text-white text-2xl font-bold ">Login</h2>{" "}

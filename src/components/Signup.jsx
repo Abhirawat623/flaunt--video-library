@@ -15,7 +15,7 @@ const handleLoginOpen=()=>{
   return (
     <div
       className="bg-zinc-800  p-6 xl:w-96 xl:h-102 h-100 w-80  
-    top-32 left-9 xl:left-102 xl:top-14 flex flex-col items-center justify-between rounded-lg fixed z-20"
+    flex wrap top-2/4 left-2/4 translate  flex flex-col items-center justify-between rounded-lg fixed z-20"
     >
       <div className=" flex flex-col items-center">
         <h2 className="text-white text-2xl font-bold ">Sign Up</h2>{" "}

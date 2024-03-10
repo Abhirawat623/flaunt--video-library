@@ -13,9 +13,9 @@ export const VideoCard = ({ items }) => {
     <div className=" border-2 flex flex-col pb-1 rounded-l shadow-xl" onClick={handleVideoClick}>
       <div >
         <img className="w-full " src={image} alt="content image" />
-        <span className=" relative -top-10 left-96 text-slate-800 bg-white px-1 ">
+        {/* <span className=" relative -top-10 left-96 text-slate-800 bg-white px-1 flex-wrap`">
           {length}
-        </span>
+        </span> */}
       </div>
       <div className="flex flex-row gap-x-1 xl:gap-x-2 items-center ">
         <div className="w-12 h-12 p-1">

@@ -1,7 +1,6 @@
 export const BottomBar = () => {
   return (
-    <div className="flex flex-row fixed bg-zinc-800 text-white p-0.5 xl:p-1 z-10 h-11 w-full bottom-0 justify-between items-center flex-wrap ">
-     
+    <div className="flex flex-row  fixed bg-zinc-800 text-white p-0.5 xl:p-1 z-10 h-11 w-full bottom-0 justify-between items-center flex-wrap ">
       {/* liked icon */}
       <div className="cursor-pointer">
         <svg
@@ -28,8 +27,8 @@ export const BottomBar = () => {
           />
         </svg>
       </div>
-       {/* home icon */}
-       <div className="cursor-pointer">
+      {/* home icon */}
+      <div className="cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -53,16 +52,16 @@ export const BottomBar = () => {
       </div>
       {/* archieved */}
       <div className="cursor-pointer ">
-        
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
           className="w-9 h-9 xl:10 xl:10 hover:opacity-50"
         >
+          <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
           <path
             fillRule="evenodd"
-            d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z"
+            d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087ZM12 10.5a.75.75 0 0 1 .75.75v4.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72v-4.94a.75.75 0 0 1 .75-.75Z"
             clipRule="evenodd"
           />
         </svg>
