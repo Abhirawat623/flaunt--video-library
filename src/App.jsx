@@ -1,13 +1,17 @@
-import { Home } from ".//pages/Home";
+
 import { Routes, Route } from "react-router-dom";
-import { SingleVideo } from "./pages/SingleVideo";
+import { Home, ArchivedPage ,HistoryPage,SingleVideo, PlaylistPage,LikesPage} from "./pages/index";
 import "./App.css";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home/>} />
       <Route path="/videos/:ide" element={<SingleVideo/>}/>
+      <Route path="/likes/:ide" element={<LikesPage/>}/>
+      <Route path="/archives/:ide" element={<ArchivedPage/>}/>
+      <Route path="/history/:ide" element={<HistoryPage/>}/>
+      <Route path="/playlists/:ide" element={< PlaylistPage/>}/>
     </Routes>
   );
 }

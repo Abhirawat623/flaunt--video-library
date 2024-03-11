@@ -7,17 +7,12 @@ export const  Home= ()=> {
   return (
     <div className="bg-blue">
       <Navbar/>
-      
       {isSignUpModalOpen && <SignUp/>}
       {isLoginModalOpen && <Loginpage/>}
       <BottomBar/>
       <CategoriesContainer/>
       <VideoContainer />
-     
-      
-      
     </div>
   )
 }
 
-export default Home
