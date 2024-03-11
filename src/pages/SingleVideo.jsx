@@ -1,8 +1,8 @@
-import { useEffect, useState,BottomBar } from "react";
+import { useEffect, useState } from "react";
 import {
   Navbar,
   SignUp,
-  Loginpage
+  Loginpage,BottomBar
 } from "../components/index";
 import { useModal } from "../context/modals-context";
 import { useParams } from "react-router-dom";
@@ -115,6 +115,7 @@ export const SingleVideo = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

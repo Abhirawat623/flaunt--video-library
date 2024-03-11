@@ -1,6 +1,5 @@
-
 import { Routes, Route } from "react-router-dom";
-import { Home, ArchivedPage ,HistoryPage,SingleVideo, PlaylistPage,LikesPage} from "./pages/index";
+import { Home, ArchivedPage ,HistoryPage,SingleVideo,PlaylistPage,LikesPage} from "./pages/index";
 import "./App.css";
 
 function App() {
