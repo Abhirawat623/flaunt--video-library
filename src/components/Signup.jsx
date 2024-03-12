@@ -1,4 +1,20 @@
 import { useModal } from "../context/modals-context";
+import { useAuth } from "../context/auth-context";
+import {
+  validateEmail,
+  validateName,
+  validateNumber,
+  validatePassword,
+} from "../utils/index";
+
+let isNameValid,
+isEmailValid,
+isNumberValid,
+isPasswordValid,
+isConfirmPasswordValid;
+
+
+
 export const SignUp = () => {
   //to close signup modal
   const { setIsSignUpModalOpen,setIsLoginModalOpen} = useModal();
@@ -12,6 +28,91 @@ const handleLoginOpen=()=>{
   setIsLoginModalOpen(true);
   setIsSignUpModalOpen(false)
 }
+//auth from context
+const {authDispatch}=useAuth();
+
+//valid name for signup
+const handleNameSignupChange=(event)=>{
+  isNameValid =validateName(event.target.value);
+  if(isNameValid){
+    authDispatch({
+      type:"USERNAME",
+      payload:event.target.value
+    });
+  }
+  else{
+    console.log("Invalid Name")
+  }
+}
+
+//valid email for signup
+const handleEmailSignupChange=(event)=>{
+  isEmailValid = validateEmail(event.target.value);
+  if(isEmailValid){
+    authDispatch({
+      type:"EMAIL",
+      payload:event.target.value
+    });
+  }
+  else{
+    console.log("Invalid Email")
+  }
+}
+
+//valid password for signup
+const handleMobileSignupChange=(event)=>{
+  isNumberValid= validateNumber(event.target.value);
+  if(isNumberValid){
+    authDispatch({
+    type:"NUMBER",
+    payload:event.target.value
+    })
+  }
+  else{
+    console.log("Invalid Mobile Number")
+  }
+}
+
+//valid password for signup
+const handlePasswordSignupChange=(event)=>{
+  isPasswordValid= validatePassword(event.target.value);
+if(isPasswordValid){
+  authDispatch({
+    type:"PASSWORD",
+    payload:event.target.value
+  })
+}
+else{
+  console.log("Invalid Password")
+}
+}
+
+//valid confrim passwor for signup
+const handleConfirmPasswordSignupChange=(event)=>{
+  isConfirmPasswordValid= validatePassword(event.target.value);
+  if(isConfirmPasswordValid){
+    authDispatch({
+      type:"CONFIRM_PASSWORD",
+      payload:event.target.value
+    })
+  }
+  else{
+    console.log("Invalid COnfirmed Password")
+  }
+}
+
+//form submit
+const handleFormSubmit=(event)=>{
+  event.preventDefault();
+ 
+  if(isNameValid && isEmailValid && isNumberValid && isPasswordValid === isConfirmPasswordValid){
+    console.log("account done");
+  }
+  else{
+    console.log("no")
+  }
+}
+
   return (
     <div
       className="bg-zinc-800  p-6 xl:w-96 xl:h-102 h-100 w-80  
@@ -21,8 +122,7 @@ const handleLoginOpen=()=>{
         <h2 className="text-white text-2xl font-bold ">Sign Up</h2>{" "}
         <span
           className="text-white text-4xl absolute top-1 right-1 cursor-pointer"
-          onClick={handleSignupModalClose}
-        >
+          onClick={handleSignupModalClose}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -40,17 +140,17 @@ const handleLoginOpen=()=>{
         </span>
       </div>
       <form
-        // onSubmit={handleFormSubmit}
+        onSubmit={handleFormSubmit}
         className="flex flex-col items-center gap-y-2 xl:text-xl"
       >
         <div className=" flex flex-col items-center ">
-          <label className="text-white ml-l">Name*</label>
+          <label className="text-white ml-l">Full Name*</label>
           <input
             className="p-0.5 rounded-md xl:w-80 w-72 cursor-pointer "
             placeholder="Enter Full Name"
             required
             // defaultValue={username}
-            // onChange={handleNameSignupChange}
+            onChange={handleNameSignupChange}
           />
         </div>
         <div className="flex flex-col items-center">
@@ -60,7 +160,7 @@ const handleLoginOpen=()=>{
             placeholder="Enter a valid E-mail"
             required
             // defaultValue={email}
-            // onChange={handleEmailSignupChange}
+            onChange={handleEmailSignupChange}
           />
         </div>
         <div className="flex flex-col items-center">
@@ -70,8 +170,8 @@ const handleLoginOpen=()=>{
             placeholder="Enter Mobile Number"
             maxLength={10}
             required
-            //   defaultValue={number}
-            //   onChange={handleMobileSignupChange}
+              // defaultValue={number}
+              onChange={handleMobileSignupChange}
           />
         </div>
         <div className="flex flex-col items-center">
@@ -81,8 +181,8 @@ const handleLoginOpen=()=>{
             placeholder="Must be 8 letters including caps letter & special character"
             required
             type="password"
-            // onChange={handlePasswordSignupChange}
             // defaultValue={password}
+            onChange={handlePasswordSignupChange}
           />
         </div>
         <div className="flex flex-col items-center">
@@ -92,7 +192,7 @@ const handleLoginOpen=()=>{
             placeholder="Must be 8 letters including caps latter & special character"
             required
             type="password"
-            // onChange={handleConfirmPasswordSignupChange}
+            onChange={handleConfirmPasswordSignupChange}
             // defaultValue={confirmPassword}
           />
         </div>
@@ -101,6 +201,7 @@ const handleLoginOpen=()=>{
         className=" text-white bg-green-800 xl:w-80 w-72 p-0.5 
                  hover:bg-green-600 hover:text-white h-10 rounded-md
                  text-base xl:text-lg cursor-pointer"
+                
       >
         Create Account
       </button>

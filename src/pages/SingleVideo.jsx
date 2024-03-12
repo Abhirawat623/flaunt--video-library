@@ -39,7 +39,7 @@ export const SingleVideo = () => {
       {isLoginModalOpen && <Loginpage />}
       <BottomBar/>
       <div
-        className=" mx-auto bg-white rounded-l shadow-xl p-3 
+        className=" mx-auto bg-white rounded-l shadow-xl pl-3 pr-3 pb-12 
          overflow-hidden  z-10 flex-wrap  "
       >
         <div className="flex flex-col gap-y-1">
@@ -49,12 +49,12 @@ export const SingleVideo = () => {
           <div className="uppercase tracking-wide text- text-slate-500 font-semibold ">
             {channelName}
           </div>
-          <div className="">
-            <div className=" w-full">
+          <div >
+            <div className="w-full">
               <iframe
                 title="video"
                 width="100%"
-                height="315"
+                height="580"
                 allowFullScreen
                 src={`https://www.youtube.com/embed/${id}`}
               ></iframe>

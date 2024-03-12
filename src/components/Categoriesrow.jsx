@@ -1,23 +1,21 @@
 import { useVideo } from "../context/video-context";
 export const CategoriesColumn = ({ items }) => {
-  const { categoryName,videoCategory } = items;
+  const { categoryName, videoCategory } = items;
 
   //putting categories in context
-  const {videoDispatch,clickedCategory}= useVideo();
-const handleCategoryClick=(event)=>{
-  console.log(event);
-  videoDispatch({
-   type:"CATEGORY",
-   payload:event
-  })
-console.log("11"+clickedCategory)
-}
+  const { videoDispatch} = useVideo();
+  const handleCategoryClick = (videoCategory) => {
 
-
+    videoDispatch({
+      type: "CATEGORY",
+      payload: videoCategory,
+    });
+  
+  };
 
   return (
     <span
-    onClick={()=>handleCategoryClick(videoCategory)}
+      onClick={() => handleCategoryClick(videoCategory)}
       className="
         text-white 
          xl:h-8 cursor-pointer px-2 "
