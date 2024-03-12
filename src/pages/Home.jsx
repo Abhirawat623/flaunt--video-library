@@ -5,7 +5,7 @@ export const  Home= ()=> {
      //modal context
      const {isSignUpModalOpen ,isLoginModalOpen}=useModal();
   return (
-    <div className="bg-blue">
+    <div className="bg-blue ">
       <Navbar/>
       {isSignUpModalOpen && <SignUp/>}
       {isLoginModalOpen && <Loginpage/>}
