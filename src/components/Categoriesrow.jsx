@@ -1,7 +1,6 @@
 import { useVideo } from "../context/video-context";
 export const CategoriesColumn = ({ items }) => {
   const { categoryName, videoCategory } = items;
-
   //putting categories in context
   const { videoDispatch} = useVideo();
   const handleCategoryClick = (videoCategory) => {
@@ -12,7 +11,6 @@ export const CategoriesColumn = ({ items }) => {
     });
   
   };
-
   return (
     <span
       onClick={() => handleCategoryClick(videoCategory)}

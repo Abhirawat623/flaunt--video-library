@@ -3,16 +3,17 @@ import { videoReducer } from "../reducer/video-reducer";
 const initialValue = {
   clickedCategory: "",
   likedVideo:[],
-  historyVideo:[]
+  historyVideo:[],
+  archivedVideo:[]
 };
 const VideoContext = createContext(initialValue);
 const VideoProvider = ({ children }) => {
-  const [{ clickedCategory,likedVideo,historyVideo}, videoDispatch] = useReducer(
+  const [{ clickedCategory,likedVideo,historyVideo,archivedVideo}, videoDispatch] = useReducer(
     videoReducer,
     initialValue
   );
   return (
-    <VideoContext.Provider value={{ clickedCategory,likedVideo,historyVideo,videoDispatch }}>
+    <VideoContext.Provider value={{ clickedCategory,likedVideo,historyVideo,archivedVideo,videoDispatch }}>
       {children}
     </VideoContext.Provider>
   );

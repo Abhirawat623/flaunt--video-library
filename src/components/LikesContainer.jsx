@@ -12,7 +12,6 @@ export const LikesContainer = () => {
         // Add the JWT token to the authorization header
         const token = localStorage.getItem("token");
         axios.defaults.headers.common["Authorization"] = token;
-
         const { data } = await axios.get(
           "https://flaunt-up-video-library-backend.vercel.app/api/wishlist"
         );

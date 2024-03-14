@@ -1,18 +1,22 @@
 import {useModal} from '../context/modals-context';
+import {useNavigate} from "react-router-dom";
 import { Link } from 'react-router-dom';
 export const Navbar = () => {
+  //navigate
+  const navigate=useNavigate()
 //modal context
 const{setIsSignUpModalOpen,setIsLoginModalOpen,isSignUpModalOpen,isLoginModalOpen}=useModal();
 const handleSignUpBtn=()=>{
   setIsSignUpModalOpen(true);
   setIsLoginModalOpen(false);
 }
-
 const token= localStorage.getItem("token");
 //token clear
 const handleTokenCLear=()=>{
-  localStorage.removeItem("token")
-  localStorage.removeItem("name")
+  localStorage.removeItem("token");
+  localStorage.removeItem("name");
+  navigate("/");
+window.location.reload()
 
 }
   return (
@@ -21,7 +25,6 @@ const handleTokenCLear=()=>{
       {!isSignUpModalOpen&& !isLoginModalOpen ?(<button className="bg-zinc-800 text-white font-bold xl:p-3 p-3 xl:text-center rounded-lg 
       h-12 w-22 "
       onClick={handleSignUpBtn}>
-
  {token?(<p onClick={handleTokenCLear}>Logout</p>):(<p>Sign up</p>)}
       </button>):(<button className="bg-zinc-800 text-white font-bold xl:p-3 p-4 xl:text-center rounded-lg 
       h-12 w-24 "

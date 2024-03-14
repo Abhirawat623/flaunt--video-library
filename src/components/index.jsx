@@ -7,3 +7,4 @@ export {BottomBar} from "./BottomBar";
 export {VideoCard} from "./VideoCard";
 export {LikesContainer} from "./LikesContainer";
 export {HistoryContainer} from "./HistoryContainer";
+export {ArchivedContainer} from "./ArchivedContainer";

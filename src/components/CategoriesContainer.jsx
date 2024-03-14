@@ -23,7 +23,6 @@ export const CategoriesContainer = () => {
       }
     })();
   }, [numberOfCategories]);
-
   const handleRightBtn = () => {
     setNumberOfCategories((previous) => previous + 3);
   };
@@ -31,7 +30,6 @@ export const CategoriesContainer = () => {
   const handleLeftBtn = () => {
     setNumberOfCategories((previous) => previous - 3);
   };
-
   return (
     <div className="flex flex-row sticky top-0  bg-zinc-800 text-white flex-wrap  p-0.5 xl:p-1 z-10 h-12 w-full bottom-0 justify-between items-center ">
       {/* when numbers are less than set shown catehories then only left button shows */}
@@ -51,7 +49,6 @@ export const CategoriesContainer = () => {
           </svg>
         </button>
       )}
-
       {categories.map((category) => (
         <CategoriesColumn items={category} key={category._id} />
       ))}

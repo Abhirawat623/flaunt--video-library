@@ -38,7 +38,6 @@ export const Loginpage = () => {
       console.log("Invalid Password");
     }
   };
-
   //login form submit
   const handleLoginFormSubmit = async (event) => {
     event.preventDefault();
@@ -59,7 +58,6 @@ export const Loginpage = () => {
       }
     }
   };
-
   return (
     <div
       className="bg-zinc-800  p-6 xl:w-96 xl:h-66 h-66 w-80 

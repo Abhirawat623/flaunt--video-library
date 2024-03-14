@@ -5,10 +5,10 @@ import {
   Loginpage,BottomBar
 } from "../components/index";
 import { addWishlistHandler } from "../services/wishlist-service";
-
 import { useModal } from "../context/modals-context";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { addArchivedHandler } from "../services/archived-services";
 export const SingleVideo = () => {
   //for single video
   const [singleVideo, setSingleVideo] = useState({});
@@ -34,15 +34,17 @@ const token = localStorage.getItem("token");
       }
     })();
   }, [ide]);
-
   //like button
-
   const handleLikeButton=(ide)=>{
     if(token){
       addWishlistHandler(ide)
-      console.log("11"+ide)
     }
-
+  }
+  //archived button
+  const handleArchivedBtn=(ide)=>{
+    if(token){
+      addArchivedHandler(ide)
+    }
   }
 
   const { description, id, title, category, channelName} = singleVideo;
@@ -89,12 +91,12 @@ const token = localStorage.getItem("token");
               <span>Like</span>
             </div>
             {/* playlist btn*/}
-            <div className="playlist-btn text-slate-900 flex flex-row items-center cursor-pointer">
+            <div className="playlist-btn text-slate-900 flex flex-row items-center cursor-pointer hover:opacity-50">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-8 h-8 hover:opacity-50"
+                className="w-8 h-8 "
               >
                 <path
                   fillRule="evenodd"
@@ -106,12 +108,13 @@ const token = localStorage.getItem("token");
             </div>
 
             {/* archived btn*/}
-            <div className="playlist-btn text-slate-900 flex flex-row items-center  cursor-pointer">
+            <div className="playlist-btn text-slate-900 flex flex-row items-center cursor-pointer hover:opacity-50"
+            onClick={()=>handleArchivedBtn(ide)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-8 h-8 hover:opacity-50"
+                className="w-8 h-8 "
               >
                 <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
                 <path
@@ -120,7 +123,7 @@ const token = localStorage.getItem("token");
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Add To Playlist</span>
+              <span>Archive</span>
             </div>
           </div>
           <div className="pt-1 flex flex-col ">

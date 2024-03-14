@@ -7,17 +7,14 @@ import {
   validateNumber,
   validatePassword,
 } from "../utils/index";
-
 let isNameValid,
   isEmailValid,
   isNumberValid,
   isPasswordValid,
   isConfirmPasswordValid;
-
 export const SignUp = () => {
   //to close signup modal
   const { setIsSignUpModalOpen, setIsLoginModalOpen } = useModal();
-
   const handleSignupModalClose = () => {
     setIsSignUpModalOpen(false);
   };
@@ -29,7 +26,6 @@ export const SignUp = () => {
   //auth from context
   const { authDispatch, email, password, username, number, confirmPassword } =
     useAuth();
-
   //valid name for signup
   const handleNameSignupChange = (event) => {
     isNameValid = validateName(event.target.value);
@@ -42,7 +38,6 @@ export const SignUp = () => {
       console.log("Invalid Name");
     }
   };
-
   //valid email for signup
   const handleEmailSignupChange = (event) => {
     isEmailValid = validateEmail(event.target.value);
@@ -55,7 +50,6 @@ export const SignUp = () => {
       console.log("Invalid Email");
     }
   };
-
   //valid password for signup
   const handleMobileSignupChange = (event) => {
     isNumberValid = validateNumber(event.target.value);
@@ -68,7 +62,6 @@ export const SignUp = () => {
       console.log("Invalid Mobile Number");
     }
   };
-
   //valid password for signup
   const handlePasswordSignupChange = (event) => {
     isPasswordValid = validatePassword(event.target.value);
@@ -81,7 +74,6 @@ export const SignUp = () => {
       console.log("Invalid Password");
     }
   };
-
   //valid confrim passwor for signup
   const handleConfirmPasswordSignupChange = (event) => {
     isConfirmPasswordValid = validatePassword(event.target.value);
@@ -94,11 +86,9 @@ export const SignUp = () => {
       console.log("Invalid COnfirmed Password");
     }
   };
-
   //form submit
   const handleFormSubmit = (event) => {
     event.preventDefault();
-
     if (
       isNameValid &&
       isEmailValid &&
