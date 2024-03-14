@@ -1,16 +1,17 @@
 import { useNavigate } from "react-router-dom";
-
+import { addHistoryHandler } from "../services/history-service";
 export const VideoCard = ({ items }) => {
   const { title, image,  views, channelName, icon, _id } = items;
   //to navigate for single card
   const navigate = useNavigate();
-  const handleVideoClick = () => {
+  const handleVideoClick = (_id) => {
     navigate(`/videos/${_id}`);
+addHistoryHandler(_id)
   };
   return (
     <div
       className=" border-2 flex flex-col pb-1 rounded-l shadow-xl"
-      onClick={handleVideoClick}
+      onClick={()=>handleVideoClick(_id)}
     >
       <div>
         <img className="w-full " src={image} alt="content image" />

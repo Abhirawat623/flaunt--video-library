@@ -64,11 +64,11 @@ const token = localStorage.getItem("token");
             {channelName}
           </div>
           <div >
-            <div className="w-full">
+            <div className="w-full rounded-md">
               <iframe
                 title="video"
                 width="100%"
-                height="580"
+                height="320"
                 allowFullScreen
                 src={`https://www.youtube.com/embed/${id}`}
               ></iframe>

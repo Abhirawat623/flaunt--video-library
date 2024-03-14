@@ -10,6 +10,9 @@ case "LIKED_VIDEO":
         ...state,
         likedVideo:payload
     }
+case "HISTORY_VIDEO":
+    return{...state,
+        historyVideo:payload}
 default:
     return state
 }

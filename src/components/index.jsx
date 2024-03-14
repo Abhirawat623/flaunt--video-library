@@ -6,3 +6,4 @@ export {CategoriesContainer} from "./CategoriesContainer";
 export {BottomBar} from "./BottomBar";
 export {VideoCard} from "./VideoCard";
 export {LikesContainer} from "./LikesContainer";
+export {HistoryContainer} from "./HistoryContainer";
