@@ -4,3 +4,5 @@ export {VideoContainer} from "./VideoContainer";
 export {Loginpage} from "./Login";
 export {CategoriesContainer} from "./CategoriesContainer";
 export {BottomBar} from "./BottomBar";
+export {VideoCard} from "./VideoCard";
+export {LikesContainer} from "./LikesContainer";

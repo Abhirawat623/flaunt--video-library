@@ -5,7 +5,11 @@ case "CATEGORY":
         ...state,
        clickedCategory: payload
     }
-
+case "LIKED_VIDEO":
+    return{
+        ...state,
+        likedVideo:payload
+    }
 default:
     return state
 }

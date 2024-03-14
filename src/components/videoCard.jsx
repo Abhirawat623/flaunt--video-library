@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 export const VideoCard = ({ items }) => {
-  const { title, image, length, views, channelName, icon, _id } = items;
+  const { title, image,  views, channelName, icon, _id } = items;
   //to navigate for single card
   const navigate = useNavigate();
   const handleVideoClick = () => {
