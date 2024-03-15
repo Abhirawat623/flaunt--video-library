@@ -19,13 +19,22 @@ export const PinCode = () => {
 //for pin select
 const handlePinSelect=()=>{
   const pinEntered=pin.join("");
+  //token from local storage
+const token= localStorage.getItem("token");
+if(token){
   if(pinEntered.length ===4){
-localStorage.setItem("pincode",pin.join(""))
-window.location.reload()
+    localStorage.setItem("pincode",pin.join(""))
+    window.location.reload()
+    }
+    else{
+      window.alert("Please provide valid pin")
+    }
 }
 else{
-  window.alert("Please provide valid pin")
+  window.alert("Please login first")
 }
+
+
 }
 console.log(pin)
 //getting pin from local storage
@@ -46,10 +55,13 @@ else{
 }
 }
 
+
  
   return (
     <div className="flex flex-col items-center justify-center pt-5 z-5 gap-y-4">
-      <div className="text-3xl xl:text-5xl">Lock your archived items</div>
+        <div className="text-3xl xl:text-5xl">Lock your archived items</div>
+      <img src={"/src/assets/Lock.png"} alt="lock" className="xl:h-44 md:h-36 h-24 mx-auto my-4"/>
+    
       <div className="text-3xl xl:text-5xl">Please Set Your Pin</div>
       <div className="flex flex-row justify-center items-center flex-wrap">
         {pin.map((data, index) => {
