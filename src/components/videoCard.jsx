@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { addHistoryHandler } from "../services/history-service";
 export const VideoCard = ({ items }) => {
-  const { title, image,  views, channelName, icon, _id } = items;
+  const { title, image,  views, channelName, icon, _id,length } = items;
   //to navigate for single card
   const navigate = useNavigate();
   const handleVideoClick = (_id) => {
@@ -15,9 +15,9 @@ addHistoryHandler(_id)
     >
       <div>
         <img className="w-full " src={image} alt="content image" />
-        {/* <span className=" relative -top-10 left-96 text-slate-800 bg-white px-1 flex-wrap`">
+        <span className=" relative -top-10  text-slate-800 bg-white px-1 flex-wrap`">
           {length}
-        </span> */}
+        </span>
       </div>
       <div className="flex flex-row gap-x-1 xl:gap-x-2 items-center ">
         <div className="w-12 h-12 p-1">

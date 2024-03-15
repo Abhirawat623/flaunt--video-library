@@ -18,6 +18,6 @@ export const FetchedCards = ({ itemIds }) => {
         console.log(error);
       }
     })();
-  }, [videoId]);
+  }, [videoId,videos]);
   return <VideoCard items={videos} />;
 };

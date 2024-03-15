@@ -17,6 +17,11 @@ export const videoReducer = (state, { type, payload }) => {
         ...state,
         archivedVideo: payload,
       };
+      case "LOADING":
+        return {
+          ...state,
+          loading:!state.loading,
+        };
     default:
       return state;
   }

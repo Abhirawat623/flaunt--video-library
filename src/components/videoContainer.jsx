@@ -6,19 +6,23 @@ export const VideoContainer = () => {
   //for videos fetched
   const [videos, setVideos] = useState([]);
   //from context
-  const { clickedCategory } = useVideo();
+  const { clickedCategory} = useVideo();
   useEffect(() => {
     (async () => {
       try {
+
         const { data } = await axios.get(
           `https://flaunt-up-video-library-backend.vercel.app/api/videos?category=${
             clickedCategory === "all" ? "" : clickedCategory
           }`
         );
+
+        
         setVideos(data);
       } catch (err) {
         console.log(err);
       }
+      
     })();
   }, [clickedCategory]);
   return (
