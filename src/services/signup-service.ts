@@ -11,6 +11,8 @@ export const signupHandler = async (username, number, email, password) => {
       }
     );
   } catch (error) {
+    
     console.log("error adding signup props to database"+error);
+    window.alert("Invalid Credentials")
   }
 };

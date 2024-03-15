@@ -11,7 +11,7 @@ export const addArchivedHandler= async (id)=>{
         {videoId:id}
           )
     } catch (error) {
-        console.error("Error adding archived items:", error.message); 
+        console.log("Error adding archived items:", error.message); 
     }
 };
 

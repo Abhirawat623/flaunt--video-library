@@ -1,6 +1,7 @@
 import { useModal } from "../context/modals-context";
 import { useAuth } from "../context/auth-context";
 import { signupHandler } from "../services/signup-service";
+import {  toast } from 'alert';
 import {
   validateEmail,
   validateName,
@@ -89,6 +90,7 @@ export const SignUp = () => {
   //form submit
   const handleFormSubmit = (event) => {
     event.preventDefault();
+  
     if (
       isNameValid &&
       isEmailValid &&
@@ -98,8 +100,10 @@ export const SignUp = () => {
       signupHandler(username, number, email, password);
       setIsLoginModalOpen(true);
       setIsSignUpModalOpen(false);
+      toast(`Hey ${username}, Account Created!`)
     } else {
-      console.log("no");
+      toast(`Could not create account!`)
+      setIsSignUpModalOpen(false);
     }
   };
 

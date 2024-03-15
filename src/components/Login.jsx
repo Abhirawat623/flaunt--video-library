@@ -2,6 +2,10 @@ import { useModal } from "../context/modals-context";
 import { useAuth } from "../context/auth-context";
 import { validateNumber, validatePassword } from "../utils/index";
 import { loginHandler } from "../services/login-service";
+import {  toast } from 'alert';
+
+//refresh
+
 let isNumberValid, isPasswordValid;
 export const Loginpage = () => {
   //to close login modal
@@ -41,6 +45,7 @@ export const Loginpage = () => {
   //login form submit
   const handleLoginFormSubmit = async (event) => {
     event.preventDefault();
+    setIsLoginModalOpen(false);
     if (isNumberValid && isPasswordValid) {
       const { accessToken, username } = await loginHandler(number, password);
       authDispatch({
@@ -50,13 +55,19 @@ export const Loginpage = () => {
       authDispatch({
         type: "SET_USER_NAME",
         payload: username,
-      });
+      });}
+      else{
+        toast(`Could not log in:Invalid Credentials`)
+      }
       const token = localStorage.getItem("token");
+      const name = localStorage.getItem("name");
       console.log(token);
       if (token) {
-        setIsLoginModalOpen(false);
+          toast(`Hey ${name}, Login successfully!`)
       }
-    }
+      setTimeout(()=>{
+        window.location.reload()
+        },900)
   };
   return (
     <div

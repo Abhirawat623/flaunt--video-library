@@ -25,8 +25,9 @@ window.location.reload()
       {!isSignUpModalOpen&& !isLoginModalOpen ?(<button className="bg-zinc-800 text-white font-bold xl:p-3 p-3 xl:text-center rounded-lg 
       h-12 w-22 "
       onClick={handleSignUpBtn}>
- {token?(<p onClick={handleTokenCLear}>Logout</p>):(<p>Sign up</p>)}
-      </button>):(<button className="bg-zinc-800 text-white font-bold xl:p-3 p-4 xl:text-center rounded-lg 
+ {token?(<p onClick={handleTokenCLear}>Log out</p>):(<p>Sign up</p>)}
+      </button>)
+      :(<button className="bg-zinc-800 text-white font-bold p-3 xl:text-center rounded-lg 
       h-12 w-24 "
       >Welcome</button>)}
     </div>

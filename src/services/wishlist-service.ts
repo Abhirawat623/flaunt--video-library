@@ -12,7 +12,7 @@ export const addWishlistHandler= async (id)=>{
           )
         
     } catch (error) {
-        console.error("Error adding wishlist items:", error.message); 
+        console.log("Error adding wishlist items:", error.message); 
     }
 };
 

@@ -1,4 +1,4 @@
-import { Navbar,SignUp,Loginpage,BottomBar,HistoryContainer,Loading,Skeleton} from "../components/index";
+import { Navbar,SignUp,Loginpage,BottomBar,HistoryContainer,Skeleton} from "../components/index";
 import {useModal} from '../context/modals-context';
 import { useEffect,useState } from "react"
 export const  HistoryPage= ()=> {
@@ -6,13 +6,12 @@ export const  HistoryPage= ()=> {
      const {isSignUpModalOpen ,isLoginModalOpen}=useModal();
       //skeleton 
     const [loading,setLoading]=useState(false)
-
     useEffect(()=>{
      setLoading(true);
       setTimeout(()=>{
         setLoading(false)
           console.log(loading);
-      },800)
+      },650)
     },[])
   //token
   const token = localStorage.getItem("token");

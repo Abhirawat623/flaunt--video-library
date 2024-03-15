@@ -12,7 +12,7 @@ export const addHistoryHandler= async (id)=>{
           )
         
     } catch (error) {
-        console.error("Error adding history:", error.message); 
+        console.log("Error adding history:", error.message); 
     }
 };
 

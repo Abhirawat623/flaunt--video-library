@@ -1,8 +1,5 @@
 import axios from "axios";
-
-
 export const loginHandler= async (number,password)=>{
-
     try {
         const {data:{accessToken,username}}= await axios.post(
             "https://flaunt-up-video-library-backend.vercel.app/api/auth/login",
@@ -17,6 +14,7 @@ export const loginHandler= async (number,password)=>{
         
         return {accessToken,username}
     } catch (error) {
-        console.log("can't login"+error)
+        console.log(error)
+        window.alert("Invalid Credentials")
     }
 }
