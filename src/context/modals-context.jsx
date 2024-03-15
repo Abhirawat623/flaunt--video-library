@@ -6,6 +6,7 @@ const ModalContext = createContext(initialValue);
 const ModalProvider = ({ children }) => {
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isPinModalOpen, setIsPinModalOpen] = useState(true);
   return (
     <ModalContext.Provider
       value={{
@@ -13,6 +14,7 @@ const ModalProvider = ({ children }) => {
         isLoginModalOpen,
         setIsSignUpModalOpen,
         setIsLoginModalOpen,
+        isPinModalOpen, setIsPinModalOpen
       }}
     >
       {children}

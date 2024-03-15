@@ -1,43 +1,90 @@
 import { useState } from "react";
+import {useModal} from '../context/modals-context';
+export const PinCode = () => {
+  //pin modal
+  const {setIsPinModalOpen}=useModal();
+  const [pin, setPin] = useState(new Array(4).fill(""));
+  const handleChange = (element, index) => {
+    if (isNaN(element.value)) return false;
 
-export const PinCode=()=>{
-  const [pin, setPin] = useState("");
+    setPin([
+      ...pin.map((value, idx) => (idx === index ? element.value : value)),
+    ]);
 
-  
+    //Focus next input
+    if (element.nextSibling) {
+      element.nextSibling.focus();
+    }
+  };
+//for pin select
+const handlePinSelect=()=>{
+  const pinEntered=pin.join("");
+  if(pinEntered.length ===4){
+localStorage.setItem("pincode",pin.join(""))
+window.location.reload()
+}
+else{
+  window.alert("Please provide valid pin")
+}
+}
+console.log(pin)
+//getting pin from local storage
+const pincode= localStorage.getItem("pincode");
+//handle confirmed pin verify
+const handleConfirmedPinSelect=()=>{
+  const pinEnter=pin.join("");
+if(pinEnter.length===4){
+  if(pinEnter===pincode){
+    setIsPinModalOpen(false)
+  }
+  else{
+    window.alert("Pin does'nt match")
+  }
+}
+else{
+  window.alert("Please provide valid pin")
+}
+}
 
+ 
   return (
-    <div className="flex flex-col items-center justify-center pt-5 bg-slate-100 ">
-      
-      <input className="bg-slate-700 text-white text-center w-72"  value={pin}   />
-     
-      <div className="flex flex-col justify-center items-center flex-wrap">
-        <div className="flex flex-row ">
-          <button className="h-20 w-24 bg-slate-800 text-white text-center hover:opacity-80" onClick={() => setPin((pin) => `${pin}1`)}>1</button>
-          <button className="h-20 w-24 bg-slate-800 text-white text-center hover:opacity-80" onClick={() => setPin((pin) => `${pin}2`)}>2</button>
-          <button className="h-20 w-24 bg-slate-800 text-white text-center hover:opacity-80" onClick={() => setPin((pin) => `${pin}3`)}>3</button>
-        </div>
-        <div className="flex flex-row ">
-          <button className="h-20 w-24 bg-slate-800 text-white text-center hover:opacity-80" onClick={() => setPin((pin) => `${pin}4`)}>4</button>
-          <button className="h-20 w-24 bg-slate-800 text-white text-center hover:opacity-80" onClick={() => setPin((pin) => `${pin}5`)}>5</button>
-          <button className="h-20 w-24 bg-slate-800 text-white text-center hover:opacity-80" onClick={() => setPin((pin) => `${pin}6`)}>6</button>
-        </div>
-        <div className="flex flex-row  ">
-          <button className="h-20 w-24 bg-slate-800 text-white text-center hover:opacity-80" onClick={() => setPin((pin) => `${pin}7`)}>7</button>
-          <button className="h-20 w-24 bg-slate-800 text-white text-center hover:opacity-80" onClick={() => setPin((pin) => `${pin}8`)}>8</button>
-          <button className="h-20 w-24 bg-slate-800 text-white text-center hover:opacity-80" onClick={() => setPin((pin) => `${pin}9`)}>9</button>
-        </div>
-        <div className="flex flex-row ">
-          <button className="h-20 w-24 bg-slate-800 text-white text-center hover:opacity-80" onClick={() => setPin((pin) => pin.slice(0, pin.length - 1))}>
-            -
-          </button>
-          <button className="h-20 w-24 bg-slate-800 text-white text-center hover:opacity-80" onClick={() => setPin(`${pin}0`)}>0</button>
-          <button className="h-20 w-24 bg-slate-800 text-white text-center hover:opacity-80" onClick={() => setPin((pin) => pin.slice(0, pin.length - 1))}>C</button>
-        </div>
-        <div className="flex flex-row w-full">
-          <button className="h-12 w-full bg-green-800 text-white text-center hover:opacity-80" >Submit</button>
-      
-        </div>
+    <div className="flex flex-col items-center justify-center pt-5 z-5 gap-y-4">
+      <div className="text-3xl xl:text-5xl">Lock your archived items</div>
+      <div className="text-3xl xl:text-5xl">Please Set Your Pin</div>
+      <div className="flex flex-row justify-center items-center flex-wrap">
+        {pin.map((data, index) => {
+          return (
+            <input
+              className=" bg-slate-800 text-white mx-2 xl:w-24 w-16 h-20 text-center "
+              type="text"
+              name="pin"
+              maxLength="1"
+              key={index}
+              value={data}
+              onChange={(event) => {
+                handleChange(event.target, index);
+              }}
+              onFocus={(event) => {
+                event.target.select();
+              }}
+            />
+          );
+        })}
+      </div>
+
+      <div className="flex flex-col justify-center items-center gap-y-2 w-64">
+        <button
+          className="bg-red-800 w-full h-10 rounded-md text-white"
+          onClick={(event) => {
+            setPin([...pin.map((values) => "")]);
+          }}
+        >
+          Clear Pin
+        </button>
+        {pincode ?(<button className="bg-green-800 w-full h-10 rounded-md text-white " onClick={handleConfirmedPinSelect}>Confirm Pin</button>):
+        (<button className="bg-green-800 w-full h-10 rounded-md text-white " onClick={handlePinSelect} >Set Pin</button>)}
+        
       </div>
     </div>
   );
-}
+};

@@ -11,7 +11,7 @@ export const  HistoryPage= ()=> {
       setTimeout(()=>{
         setLoading(false)
           console.log(loading);
-      },650)
+      },850)
     },[])
   //token
   const token = localStorage.getItem("token");

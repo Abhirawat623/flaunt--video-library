@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, ArchivedPage ,HistoryPage,SingleVideo,PlaylistPage,LikesPage} from "./pages/index";
+import { Home, ArchivedPage ,HistoryPage,SingleVideo,PlaylistPage,LikesPage, PageNotFound} from "./pages/index";
 import "./App.css";
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       <Route path="/archives/:ide" element={<ArchivedPage/>}/>
       <Route path="/history/:ide" element={<HistoryPage/>}/>
       <Route path="/playlists/:ide" element={< PlaylistPage/>}/>
+      <Route path="*" element={< PageNotFound/>}/>
     </Routes>
   );
 }

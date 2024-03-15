@@ -15,6 +15,7 @@ const token= localStorage.getItem("token");
 const handleTokenCLear=()=>{
   localStorage.removeItem("token");
   localStorage.removeItem("name");
+  localStorage.removeItem('pincode')
   navigate("/");
 window.location.reload()
 
