@@ -1,12 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import { addHistoryHandler } from "../services/history-service";
+import { useVideo } from "../context/video-context";
 export const VideoCard = ({ items }) => {
   const { title, image,  views, channelName, icon, _id,length } = items;
+  //singleid context
+  const {videoDispatch}=useVideo();
   //to navigate for single card
   const navigate = useNavigate();
   const handleVideoClick = (_id) => {
     navigate(`/videos/${_id}`);
 addHistoryHandler(_id)
+videoDispatch({
+  type:"SINGLE_ID",
+  payload:_id
+});
   };
   return (
     <div

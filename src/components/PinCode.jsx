@@ -6,11 +6,9 @@ export const PinCode = () => {
   const [pin, setPin] = useState(new Array(4).fill(""));
   const handleChange = (element, index) => {
     if (isNaN(element.value)) return false;
-
     setPin([
       ...pin.map((value, idx) => (idx === index ? element.value : value)),
     ]);
-
     //Focus next input
     if (element.nextSibling) {
       element.nextSibling.focus();
@@ -33,8 +31,6 @@ if(token){
 else{
   window.alert("Please login first")
 }
-
-
 }
 console.log(pin)
 //getting pin from local storage
@@ -54,15 +50,12 @@ else{
   window.alert("Please provide valid pin")
 }
 }
-
-
- 
   return (
     <div className="flex flex-col items-center justify-center pt-5 z-5 gap-y-4">
-        <div className="text-3xl xl:text-5xl">Lock your archived items</div>
-      <img src={"/src/assets/Lock.png"} alt="lock" className="xl:h-44 md:h-36 h-24 mx-auto my-4"/>
+       
+      <img src={"/src/assets/Lock.png"} alt="lock" className="xl:h-36 md:h-36 h-24 mx-auto my-2"/>
     
-      <div className="text-3xl xl:text-5xl">Please Set Your Pin</div>
+      <div className="text-3xl ">Please Set Your Pin</div>
       <div className="flex flex-row justify-center items-center flex-wrap">
         {pin.map((data, index) => {
           return (

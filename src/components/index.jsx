@@ -11,3 +11,4 @@ export {ArchivedContainer} from "./ArchivedContainer";
 export {Loading} from "./Loading";
 export {Skeleton} from "./Skeleton";
 export {PinCode} from "./PinCode";
+export {AddPlaylistModal} from "./AddPLaylistModal";
