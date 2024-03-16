@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {useModal} from '../context/modals-context';
+import { toast} from 'alert';
 export const PinCode = () => {
   //pin modal
   const {setIsPinModalOpen}=useModal();
@@ -25,11 +26,11 @@ if(token){
     window.location.reload()
     }
     else{
-      window.alert("Please provide valid pin")
+      toast("Please provide valid pin")
     }
 }
 else{
-  window.alert("Please login first")
+  toast("Please login first")
 }
 }
 console.log(pin)

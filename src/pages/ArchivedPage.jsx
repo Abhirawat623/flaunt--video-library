@@ -1,5 +1,6 @@
 import { Navbar,SignUp,Loginpage,BottomBar,ArchivedContainer,Skeleton, PinCode} from "../components/index";
 import {useModal} from '../context/modals-context';
+import { Toaster} from 'alert';
 import { useEffect,useState } from "react"
 export const  ArchivedPage= ()=> {
      //modal context
@@ -19,6 +20,7 @@ export const  ArchivedPage= ()=> {
     <div className="bg-blue">
       <Navbar/>
       <BottomBar/>
+      <Toaster/>
       {isSignUpModalOpen && <SignUp/>}
       {isLoginModalOpen && <Loginpage/>}
       <div className="flex flex-row sticky top-0  bg-zinc-800 text-white flex-wrap p-0.5 xl:p-1 z-10 h-12 w-full bottom-0 justify-center items-center ">

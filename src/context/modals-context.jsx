@@ -7,6 +7,7 @@ const ModalProvider = ({ children }) => {
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isPinModalOpen, setIsPinModalOpen] = useState(true);
+  const [isPlaylistModalOpen, setIsPlaylistModalOpen] = useState(false);
   return (
     <ModalContext.Provider
       value={{
@@ -14,7 +15,10 @@ const ModalProvider = ({ children }) => {
         isLoginModalOpen,
         setIsSignUpModalOpen,
         setIsLoginModalOpen,
-        isPinModalOpen, setIsPinModalOpen
+        isPinModalOpen,
+        setIsPinModalOpen,
+        isPlaylistModalOpen,
+        setIsPlaylistModalOpen,
       }}
     >
       {children}
