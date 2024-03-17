@@ -39,7 +39,6 @@ export const AddPlaylistModal = () => {
   const handleAddPlaylistData = (event) => {
     if (event.target.checked) {
       addPlaylistHandler(singleId, playlistName);
-      
       setIsPlaylistModalOpen(false);
       navigate("/playlists/:ide");
      

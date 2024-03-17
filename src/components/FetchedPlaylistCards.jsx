@@ -3,7 +3,7 @@ export const FetchedPlaylistCards=({items})=>{
 const {playlistName}=items
 return(
     <div>
-        <span>{playlistName}</span>
+        <div className="w-full bg-slate-800 text-center text-white">{playlistName}</div>
         <FetchedCards itemIds={items}/>
     </div>
 )

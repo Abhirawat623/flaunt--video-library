@@ -8,7 +8,8 @@ export default {
         '100': '28.5rem',
       },
       spacing:{
-        '102':'34rem'
+        '102':'34rem',
+        '104':'33rem'
       },
       width: {
         '58': '12.6rem',
