@@ -10,6 +10,7 @@ export const addPlaylistHandler= async (singleId,playlistName)=>{
         const data = await axios.post("https://flaunt-up-video-library-backend.vercel.app/api/playlist",
         {videoId:singleId,
         playlistName:playlistName}
+        
           )
     } catch (error) {
         console.log("Error adding playlist:", error.message); 

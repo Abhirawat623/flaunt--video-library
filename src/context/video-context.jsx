@@ -6,17 +6,18 @@ const initialValue = {
   likedVideo:[],
   historyVideo:[],
   archivedVideo:[],
+  playlistVideo:[],
   playlistName:"",
   singleId:''
 };
 const VideoContext = createContext(initialValue);
 const VideoProvider = ({ children }) => {
-  const [{ clickedCategory,likedVideo,historyVideo,archivedVideo,loading,playlistName,singleId}, videoDispatch] = useReducer(
+  const [{ clickedCategory,likedVideo,historyVideo,archivedVideo,loading,playlistName,singleId,playlistVideo}, videoDispatch] = useReducer(
     videoReducer,
     initialValue
   );
   return (
-    <VideoContext.Provider value={{ clickedCategory,likedVideo,historyVideo,archivedVideo,loading,playlistName,singleId,videoDispatch }}>
+    <VideoContext.Provider value={{ clickedCategory,likedVideo,historyVideo,archivedVideo,loading,playlistName,singleId,playlistVideo,videoDispatch }}>
       {children}
     </VideoContext.Provider>
   );
