@@ -101,6 +101,9 @@ export const SignUp = () => {
       setIsLoginModalOpen(true);
       setIsSignUpModalOpen(false);
       toast(`Hey ${username}, Account Created!`)
+      authDispatch({
+        type:"CLEAR_SIGNUP"
+      })
     } else {
       toast(`Could not create account!`)
       setIsSignUpModalOpen(false);

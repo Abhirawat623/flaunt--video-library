@@ -32,6 +32,11 @@ export const videoReducer = (state, { type, payload }) => {
         ...state,
         playlistName: payload,
       };
+      case "CLEAR_PLAYLIST_NAME":
+        return {
+          ...state,
+          playlistName: "",
+        };
     case "PLAYLIST_VIDEO":
       return { ...state, playlistVideo: payload };
     default:

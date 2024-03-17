@@ -88,6 +88,9 @@ const navigate= useNavigate();
       console.log(token);
       if (token) {
           toast(`Hey ${name}, Login successfully!`)
+          authDispatch({
+            type:"CLEAR_SIGNUP"
+          })
       }
       setTimeout(()=>{
         window.location.reload()

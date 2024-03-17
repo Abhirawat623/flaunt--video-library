@@ -35,7 +35,6 @@ const handleDeleteItems=()=>{
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="white"
-          viewBox=""
           strokeWidth={1.5}
           stroke="currentColor"
           className="w-8 h-8"

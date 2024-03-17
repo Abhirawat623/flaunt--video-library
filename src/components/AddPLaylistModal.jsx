@@ -40,6 +40,9 @@ export const AddPlaylistModal = () => {
     if (event.target.checked) {
       addPlaylistHandler(singleId, playlistName);
       setIsPlaylistModalOpen(false);
+      videoDispatch({
+        type:"CLEAR_PLAYLIST_NAME"
+      })
       navigate("/playlists/:ide");
      
     }
@@ -50,7 +53,7 @@ export const AddPlaylistModal = () => {
   };
   console.log(playlistName);
   return (
-    <div className="top-1/2 left-1/2 translate fixed bg-gradient-to-r from-zinc-600 from-10% via-zinc-500 via-30% to-zinc-600 to-90% transparent xl:w-96 xl:max-h-66 min-h-52 w-80 text-xl p-12 z-5">
+    <div className="top-1/2 left-1/2 translate fixed bg-zinc-800  xl:w-96 xl:max-h-66 min-h-52 w-80 text-xl p-12 z-5">
       <div className="flex flex-col justify-center items-center gap-y-1 ">
         <span
           className="text-white text-4xl absolute top-0.5 right-0.5 cursor-pointer"
@@ -59,7 +62,6 @@ export const AddPlaylistModal = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 30 "
             strokeWidth={1.5}
             stroke="currentColor"
             className="w-6 h-6"
@@ -76,11 +78,11 @@ export const AddPlaylistModal = () => {
         </div>
 
         {/* playlist */}
-        <div className="flex flex-col gap-y-0.5 bg-zinc-800 text-white w-full xl:max-h-32 max-h-32 rounded-md overflow-y-auto">
+        <div className="flex flex-col gap-y-0.5 text-white bg-green-800 text-white w-full xl:max-h-32 max-h-32 rounded-md overflow-y-auto">
           <div className="flex flex-row items-center px-12 gap-x-2  min-h-8">
             <input
               type="radio"
-              className="cursor-pointer"
+              className="cursor-pointer focus:outline-none border-none "
               required
               onChange={(event) => {
                 handleAddPlaylistData(event);

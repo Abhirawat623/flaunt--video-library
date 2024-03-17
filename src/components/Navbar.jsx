@@ -1,7 +1,10 @@
 import {useModal} from '../context/modals-context';
 import {useNavigate} from "react-router-dom";
+import{useAuth} from "../context/auth-context";
 import { Link } from 'react-router-dom';
 export const Navbar = () => {
+  //clearing after logout
+  const {authDispatch}=useAuth();
   //navigate
   const navigate=useNavigate()
 //modal context
@@ -13,6 +16,9 @@ const handleSignUpBtn=()=>{
 const token= localStorage.getItem("token");
 //token clear
 const handleTokenCLear=()=>{
+  authDispatch({
+    type:"LOGOUT_CLEAR"
+  })
   localStorage.removeItem("token");
   localStorage.removeItem("name");
   localStorage.removeItem('pincode')
