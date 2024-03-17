@@ -14,7 +14,9 @@ export const VideoContainer = () => {
           `https://flaunt-up-video-library-backend.vercel.app/api/videos?category=${
             clickedCategory === "all" ? "" : clickedCategory
           }`
+        
         );
+        console.log(data)
         setVideos(data);
       } catch (err) {
         console.log(err);
@@ -24,7 +26,7 @@ export const VideoContainer = () => {
   return (
     <div className="xl:grid xl:grid-cols-3 xl:gap-y-2 flex-wrap flex flex-col pt-3 gap-y-3 gap-x-3 pl-3 pr-3 pb-12">
       {videos.map((video) => (
-        <VideoCard items={video} key={video._id} />
+        <VideoCard items={video}/>
       ))}
     </div>
   );
