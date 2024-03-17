@@ -42,7 +42,7 @@ const navigate= useNavigate();
   };
   //login form submit
   const handleLoginFormSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefualt()
     setIsLoginModalOpen(false);
     if (isNumberValid && isPasswordValid) {
       const { accessToken, username } = await loginHandler(number, password);
@@ -68,6 +68,32 @@ const navigate= useNavigate();
         navigate("/")
         },900)
   };
+
+  //test user
+  const handleTestUserSubmit=async ()=>{
+    setIsLoginModalOpen(false);
+   
+      const { accessToken, username } = await loginHandler("900000000", "testuser123");
+      authDispatch({
+        type: "SET_ACCESS_TOKEN",
+        payload: accessToken,
+      });
+      authDispatch({
+        type: "SET_USER_NAME",
+        payload: username,
+      });
+
+      const token = localStorage.getItem("token");
+      const name = localStorage.getItem("name");
+      console.log(token);
+      if (token) {
+          toast(`Hey ${name}, Login successfully!`)
+      }
+      setTimeout(()=>{
+        window.location.reload()
+        navigate("/")
+        },900)
+  }
   return (
     <div
       className="bg-zinc-800  p-6 xl:w-96 xl:h-66 h-66 w-80 
@@ -96,7 +122,7 @@ const navigate= useNavigate();
         </span>
       </div>
       <form
-        onSubmit={handleLoginFormSubmit}
+     
         className="flex flex-col items-center gap-y-1 xl:text-xl"
       >
         <div className="flex flex-col items-center">
@@ -125,8 +151,17 @@ const navigate= useNavigate();
           className=" text-white bg-green-800 xl:w-80 w-72 p-0.5 
                hover:bg-green-600 hover:text-white h-10 rounded-md
                text-base xl:text-lg cursor-pointer"
+               onClick={handleLoginFormSubmit}
         >
           Login
+        </button>
+        <button
+          className=" text-white bg-yellow-600 xl:w-80 w-72 p-0.5 
+               hover:bg-yellow-400 hover:text-black h-10 rounded-md
+               text-base xl:text-lg cursor-pointer"
+               onClick={handleTestUserSubmit}
+        >
+         Guest Login
         </button>
       </form>
     </div>

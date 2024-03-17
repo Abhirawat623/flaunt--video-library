@@ -26,9 +26,11 @@ export const HistoryContainer = () => {
   }, [historyVideo, videoDispatch]); // Include videoDispatch as a dependency
   return (
     <div className="xl:grid xl:grid-cols-3 xl:gap-y-2 flex-wrap flex flex-col pt-3 gap-y-3 gap-x-3 pl-3 pr-3 pb-12">
-      {historyVideo.map((video) => (
+    {historyVideo.length===0?(
+      <img src="/src/assets/empty.png" className="absolute top-1/2 left-1/2 translate z-15"/>):
+      (historyVideo.map((video) => (
         <FetchedCards itemIds={video} key={video._id} />
-      ))}
+      )))}
     </div>
   );
 };

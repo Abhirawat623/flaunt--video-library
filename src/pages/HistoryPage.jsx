@@ -23,8 +23,7 @@ export const  HistoryPage= ()=> {
       <div className="flex flex-row sticky top-0  bg-zinc-800 text-white flex-wrap p-0.5 xl:p-1 z-10 h-12 w-full bottom-0 justify-center items-center ">
        <p className="text-2xl">Your History</p> 
       </div>
-      {token &&loading&&<Skeleton/>}
-      <HistoryContainer/>
+      {token ?(loading ? <Skeleton />:<HistoryContainer />):(  <img src="/src/assets/loginpl.png" className="absolute top-1/2 left-1/2 translate z-15"/>)}
     </div>
   )
 }
