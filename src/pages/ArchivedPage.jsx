@@ -11,7 +11,6 @@ export const  ArchivedPage= ()=> {
      setLoading(true);
       setTimeout(()=>{
         setLoading(false)
-          console.log(loading);
       },850)
     },[])
   //token
@@ -29,7 +28,6 @@ export const  ArchivedPage= ()=> {
       {token &&loading&&!isPinModalOpen&&<Skeleton/>}
       {isPinModalOpen&&<PinCode/>}
       {!isPinModalOpen&&<ArchivedContainer/>}
-      
     </div>
   )
 }

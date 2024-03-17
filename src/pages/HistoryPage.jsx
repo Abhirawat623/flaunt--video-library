@@ -10,7 +10,6 @@ export const  HistoryPage= ()=> {
      setLoading(true);
       setTimeout(()=>{
         setLoading(false)
-          console.log(loading);
       },850)
     },[])
   //token

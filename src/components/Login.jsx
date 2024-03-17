@@ -2,21 +2,19 @@ import { useModal } from "../context/modals-context";
 import { useAuth } from "../context/auth-context";
 import { validateNumber, validatePassword } from "../utils/index";
 import { loginHandler } from "../services/login-service";
+import { useNavigate } from "react-router-dom";
 import {  toast } from 'alert';
-
-//refresh
-
 let isNumberValid, isPasswordValid;
 export const Loginpage = () => {
+  //navigate
+const navigate= useNavigate();
   //to close login modal
   const { setIsLoginModalOpen } = useModal();
-
   const handleLoginModalClose = () => {
     setIsLoginModalOpen(false);
   };
   //useAuth from context
   const { number, password, authDispatch } = useAuth();
-
   //valid number fro login
   const handleNumberLoginChange = (event) => {
     isNumberValid = validateNumber(event.target.value);
@@ -67,6 +65,7 @@ export const Loginpage = () => {
       }
       setTimeout(()=>{
         window.location.reload()
+        navigate("/")
         },900)
   };
   return (

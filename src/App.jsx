@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import { Home, ArchivedPage ,HistoryPage,SingleVideo,PlaylistPage,LikesPage, PageNotFound} from "./pages/index";
-import "./App.css";
-
 function App() {
   return (
     <Routes>

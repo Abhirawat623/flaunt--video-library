@@ -18,7 +18,6 @@ const handleTokenCLear=()=>{
   localStorage.removeItem('pincode')
   navigate("/");
 window.location.reload()
-
 }
   return (
     <div className="bg-slate-100 p-4 flex justify-between items-center flex-row relative">

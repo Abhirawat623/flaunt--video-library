@@ -17,24 +17,23 @@ export const videoReducer = (state, { type, payload }) => {
         ...state,
         archivedVideo: payload,
       };
-      case "LOADING":
-        return {
-          ...state,
-          loading:!state.loading,
-        };
-        case "SINGLE_ID":
-          return {
-            ...state,
-            singleId:payload
-          };
-       case "PLAYLIST_NAME":
-        return{
-          ...state,
-          playlistName:payload
-        }
-     case "PLAYLIST_VIDEO":
-      return{...state,
-        playlistVideo:payload}
+    case "LOADING":
+      return {
+        ...state,
+        loading: !state.loading,
+      };
+    case "SINGLE_ID":
+      return {
+        ...state,
+        singleId: payload,
+      };
+    case "PLAYLIST_NAME":
+      return {
+        ...state,
+        playlistName: payload,
+      };
+    case "PLAYLIST_VIDEO":
+      return { ...state, playlistVideo: payload };
     default:
       return state;
   }

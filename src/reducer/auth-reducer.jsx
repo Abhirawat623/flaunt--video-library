@@ -6,8 +6,7 @@ export const authReducer = (state, { type, payload }) => {
         username: payload,
       };
     case "EMAIL":
-      return { ...state,
-         email: payload };
+      return { ...state, email: payload };
     case "NUMBER":
       return {
         ...state,

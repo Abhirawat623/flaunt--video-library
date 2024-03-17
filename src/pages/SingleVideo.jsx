@@ -2,32 +2,36 @@ import { useEffect, useState } from "react";
 import {
   Navbar,
   SignUp,
-  Loginpage,BottomBar,AddPlaylistModal
+  Loginpage,
+  BottomBar,
+  AddPlaylistModal,
 } from "../components/index";
 import { addWishlistHandler } from "../services/wishlist-service";
 import { useModal } from "../context/modals-context";
-import { useParams} from "react-router-dom";
-import { Toaster, toast} from 'alert';
+import { useParams } from "react-router-dom";
+import { Toaster, toast } from "alert";
 import axios from "axios";
 import { addArchivedHandler } from "../services/archived-services";
 export const SingleVideo = () => {
- 
   //for single video
   const [singleVideo, setSingleVideo] = useState({});
   //for id from router
   const { ide } = useParams();
   //modal context
-  const { isSignUpModalOpen, isLoginModalOpen,isPlaylistModalOpen, setIsPlaylistModalOpen} = useModal();
-  console.log(ide);
-//access Token
-const token = localStorage.getItem("token");
+  const {
+    isSignUpModalOpen,
+    isLoginModalOpen,
+    isPlaylistModalOpen,
+    setIsPlaylistModalOpen,
+  } = useModal();
+  //access Token
+  const token = localStorage.getItem("token");
   useEffect(() => {
     (async () => {
       try {
         const { data } = await axios.get(
           `https://flaunt-up-video-library-backend.vercel.app/api/videos/${ide}`
         );
-        console.log("single" + data);
         setSingleVideo(data);
       } catch (err) {
         console.log(err);
@@ -35,43 +39,39 @@ const token = localStorage.getItem("token");
     })();
   }, [ide]);
   //like button
-  const handleLikeButton=(ide)=>{
-    if(token){
-      addWishlistHandler(ide)
+  const handleLikeButton = (ide) => {
+    if (token) {
+      addWishlistHandler(ide);
+    } else {
+      toast("please login first");
     }
-    else{
-      toast("please login first")
-    }
-  }
+  };
   //archived button
-  const handleArchivedBtn=(ide)=>{
-    if(token){
-      addArchivedHandler(ide)
+  const handleArchivedBtn = (ide) => {
+    if (token) {
+      addArchivedHandler(ide);
+    } else {
+      toast("please login first");
     }
-    else{
-      toast("please login first")
-    }
-  }
+  };
   //playlist button
-  const handlePlaylistBtn=()=>{
-    if(token){
-      setIsPlaylistModalOpen(true)
+  const handlePlaylistBtn = () => {
+    if (token) {
+      setIsPlaylistModalOpen(true);
+    } else {
+      toast("please login first");
     }
-    else{
-      toast("please login first")
-    }
-  }
+  };
 
-  const { description, id, title, category, channelName} = singleVideo;
+  const { description, id, title, category, channelName } = singleVideo;
   return (
-    
-    <div >
+    <div>
       <Navbar />
       {isSignUpModalOpen && <SignUp />}
       {isLoginModalOpen && <Loginpage />}
-      {isPlaylistModalOpen && <AddPlaylistModal/>}
-      <BottomBar/>
-      <Toaster/>
+      {isPlaylistModalOpen && <AddPlaylistModal />}
+      <BottomBar />
+      <Toaster />
       <div
         className=" mx-auto bg-white rounded-l shadow-xl pl-3 pr-3 pb-12 
          overflow-hidden  z-10 flex-wrap  "
@@ -83,7 +83,7 @@ const token = localStorage.getItem("token");
           <div className="uppercase tracking-wide text- text-slate-500 font-semibold ">
             {channelName}
           </div>
-          <div >
+          <div>
             <div className="w-full rounded-md">
               <iframe
                 title="video"
@@ -96,8 +96,10 @@ const token = localStorage.getItem("token");
           </div>
           <div className="buttons-bar flex flex row gap-x-3 flex-wrap">
             {/* like btn */}
-            <div className="like-btn text-slate-900 flex flex-row items-center cursor-pointer hover:opacity-50"
-            onClick={()=>handleLikeButton(ide)}>
+            <div
+              className="like-btn text-slate-900 flex flex-row items-center cursor-pointer hover:opacity-50"
+              onClick={() => handleLikeButton(ide)}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -109,8 +111,10 @@ const token = localStorage.getItem("token");
               <span>Like</span>
             </div>
             {/* playlist btn*/}
-            <div className="playlist-btn text-slate-900 flex flex-row items-center cursor-pointer hover:opacity-50"
-            onClick={handlePlaylistBtn}>
+            <div
+              className="playlist-btn text-slate-900 flex flex-row items-center cursor-pointer hover:opacity-50"
+              onClick={handlePlaylistBtn}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -125,10 +129,11 @@ const token = localStorage.getItem("token");
               </svg>
               <span>Add To Playlist</span>
             </div>
-
             {/* archived btn*/}
-            <div className="playlist-btn text-slate-900 flex flex-row items-center cursor-pointer hover:opacity-50"
-            onClick={()=>handleArchivedBtn(ide)}>
+            <div
+              className="playlist-btn text-slate-900 flex flex-row items-center cursor-pointer hover:opacity-50"
+              onClick={() => handleArchivedBtn(ide)}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -152,7 +157,6 @@ const token = localStorage.getItem("token");
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

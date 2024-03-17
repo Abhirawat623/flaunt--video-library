@@ -33,7 +33,6 @@ else{
   toast("Please login first")
 }
 }
-console.log(pin)
 //getting pin from local storage
 const pincode= localStorage.getItem("pincode");
 //handle confirmed pin verify

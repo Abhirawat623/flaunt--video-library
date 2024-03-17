@@ -11,7 +11,6 @@ export const CategoriesContainer = () => {
         const { data } = await axios.get(
           "https://flaunt-up-video-library-backend.vercel.app/api/categories"
         );
-        console.log("cat" + data);
         //slicing for carousel
         const categoriesToShow = data.slice(
           numberOfCategories+3 > data.length ?data.length-3:numberOfCategories,

@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {deleteWishlistHandler} from "../services/wishlist-service";
+import {deleteArchivedHandler} from "../services/archived-services"
+import {deletePlaylistHandler} from "../services/playlist-services";
+import {deleteHistoryHandler } from "../services/history-service";
 import { VideoCard } from "./VideoCard";
 export const FetchedCards = ({ itemIds }) => {
-  const { videoId } = itemIds;
+  const { videoId,_id } = itemIds;
   //fetching videos
   const [videos, setVideos] = useState({});
   useEffect(() => {
@@ -11,17 +15,23 @@ export const FetchedCards = ({ itemIds }) => {
         const { data } = await axios.get(
           `https://flaunt-up-video-library-backend.vercel.app/api/videos/${videoId}`
         );
-        console.log(data);
         setVideos(data);
-        console.log(videos);
       } catch (error) {
         console.log(error);
       }
     })();
   }, [videoId, videos]);
+  //deleting the liked video
+const handleDeleteItems=()=>{
+  deleteWishlistHandler(_id);
+  deleteArchivedHandler(_id);
+  deletePlaylistHandler(_id);
+  deleteHistoryHandler(_id);
+}
   return (
-    <div>
-      <span className="text-zinx-800  text-4xl relative top-10 left-[25rem] cursor-pointer z-15">
+    <div className="relative">
+      <span className="text-zinx-800  text-4xl absolute top-2 right-0 cursor-pointer z-15"
+      onClick={handleDeleteItems}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="white"
@@ -37,7 +47,6 @@ export const FetchedCards = ({ itemIds }) => {
           />
         </svg>
       </span> 
-      
       <VideoCard items={videos} />
     </div>
   );

@@ -2,10 +2,8 @@ import { useEffect } from "react";
 import axios from "axios";
 import {FetchedPlaylistCards} from "./FetchedPlaylistCards";
 import { useVideo } from "../context/video-context";
-
 export const PlaylistContainer = () => {
   const { videoDispatch, playlistVideo} = useVideo();
-
   useEffect(() => {
     const fetchLikedVideos = async () => {
       try {
@@ -15,7 +13,6 @@ export const PlaylistContainer = () => {
         const { data} = await axios.get(
           "https://flaunt-up-video-library-backend.vercel.app/api/playlist"
         );
- console.log(data)
         videoDispatch({
           type: "PLAYLIST_VIDEO",
           payload: data,
@@ -24,7 +21,6 @@ export const PlaylistContainer = () => {
         console.error("Error getting playlist items:", error.message);
       }
     };
-
     fetchLikedVideos();
   }, [playlistVideo, videoDispatch]); // Include videoDispatch as a dependency
 

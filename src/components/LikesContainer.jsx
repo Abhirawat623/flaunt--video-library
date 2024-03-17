@@ -2,10 +2,8 @@ import { useEffect } from "react";
 import axios from "axios";
 import { FetchedCards } from "./FetchedCards";
 import { useVideo } from "../context/video-context";
-
 export const LikesContainer = () => {
   const { videoDispatch, likedVideo } = useVideo();
-
   useEffect(() => {
     const fetchLikedVideos = async () => {
       try {
@@ -15,7 +13,6 @@ export const LikesContainer = () => {
         const { data } = await axios.get(
           "https://flaunt-up-video-library-backend.vercel.app/api/wishlist"
         );
-
         videoDispatch({
           type: "LIKED_VIDEO",
           payload: data,
@@ -24,7 +21,6 @@ export const LikesContainer = () => {
         console.error("Error getting wishlist items:", error.message);
       }
     };
-
     fetchLikedVideos();
   }, [likedVideo, videoDispatch]); // Include videoDispatch as a dependency
 

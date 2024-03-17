@@ -23,7 +23,6 @@ export const ArchivedContainer = () => {
     };
     fetchArchivedVideos();
   }, [archivedVideo, videoDispatch]); // Include videoDispatch as a dependency
-
   return (
     <div className="xl:grid xl:grid-cols-3 xl:gap-y-2 flex-wrap flex flex-col pt-3 gap-y-3 gap-x-3 pl-3 pr-3 pb-12">
       {archivedVideo.map((video) => (

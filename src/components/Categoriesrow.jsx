@@ -4,12 +4,10 @@ export const CategoriesColumn = ({ items }) => {
   //putting categories in context
   const { videoDispatch} = useVideo();
   const handleCategoryClick = (videoCategory) => {
-
     videoDispatch({
       type: "CATEGORY",
       payload: videoCategory,
     });
-  
   };
   return (
     <span

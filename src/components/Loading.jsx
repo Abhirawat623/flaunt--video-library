@@ -3,12 +3,10 @@ import { useEffect,useState } from 'react';
 export const Loading =()=>{
     //loading 
   const [loading,setLoading]=useState(false)
-
   useEffect(()=>{
    setLoading(true);
     setTimeout(()=>{
       setLoading(false)
-        console.log(loading);
     },385)
   },[])
     return(
