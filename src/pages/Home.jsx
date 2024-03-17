@@ -1,4 +1,10 @@
-import { Navbar,SignUp,VideoContainer,Loginpage, CategoriesContainer, BottomBar,Loading } from "../components/index";
+import {Navbar} from "../components/Navbar";
+import { SignUp } from "../components/Signup";
+import { VideoContainer } from "../components/VideoContainer";
+import { Login } from "../components/Login";
+import {CategoriesContainer} from "../components/CategoriesContainer"
+import { BottomBar } from "../components/BottomBar";
+import {Loading} from "../components/Loading"
 import {useModal} from '../context/modals-context';
 import { Toaster } from 'alert';
 export const  Home= ()=> {
@@ -8,7 +14,7 @@ export const  Home= ()=> {
     <div className="bg-blue ">
       <Navbar/>
       {isSignUpModalOpen && <SignUp/>}
-      {isLoginModalOpen && <Loginpage/>}
+      {isLoginModalOpen && <Login/>}
       <Loading/>
       <BottomBar/>
       <Toaster/>

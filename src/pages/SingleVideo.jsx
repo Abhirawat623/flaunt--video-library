@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import {
-  Navbar,
-  SignUp,
-  Loginpage,
-  BottomBar,
-  AddPlaylistModal,
-} from "../components/index";
+import { Navbar } from "../components/Navbar";
+import { SignUp } from "../components/Signup";
+import { Login } from "../components/Login";
+import { BottomBar } from "../components/BottomBar";
+import {AddPlaylistModal} from "../components/AddPLaylistModal"
+
 import { addWishlistHandler } from "../services/wishlist-service";
 import { useModal } from "../context/modals-context";
 import { useParams } from "react-router-dom";
@@ -68,7 +67,7 @@ export const SingleVideo = () => {
     <div>
       <Navbar />
       {isSignUpModalOpen && <SignUp />}
-      {isLoginModalOpen && <Loginpage />}
+      {isLoginModalOpen && <Login />}
       {isPlaylistModalOpen && <AddPlaylistModal />}
       <BottomBar />
       <Toaster />

@@ -1,5 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, ArchivedPage ,HistoryPage,SingleVideo,PlaylistPage,LikesPage, PageNotFound} from "./pages/index";
+import { Home } from "./pages/Home";
+import { ArchivedPage } from "./pages/ArchivedPage";
+import { HistoryPage } from "./pages/HistoryPage";
+import { SingleVideo } from "./pages/SingleVideo";
+import { PlaylistPage } from "./pages/PlaylistPage";
+import { LikesPage } from "./pages/LikesPage";
+import { PageNotFound } from "./pages/PageNotFound";
 function App() {
   return (
     <Routes>

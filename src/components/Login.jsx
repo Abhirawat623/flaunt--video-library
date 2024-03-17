@@ -5,7 +5,7 @@ import { loginHandler } from "../services/login-service";
 import { useNavigate } from "react-router-dom";
 import {  toast } from 'alert';
 let isNumberValid, isPasswordValid;
-export const Loginpage = () => {
+export const Login = () => {
   //navigate
 const navigate= useNavigate();
   //to close login modal
