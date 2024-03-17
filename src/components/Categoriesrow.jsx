@@ -1,5 +1,5 @@
 import { useVideo } from "../context/video-context";
-export const CategoriesColumn = ({ items }) => {
+export const CategoriesRow = ({ items }) => {
   const { categoryName, videoCategory } = items;
   //putting categories in context
   const { videoDispatch} = useVideo();

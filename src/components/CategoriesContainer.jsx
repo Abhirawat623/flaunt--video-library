@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { CategoriesColumn } from "./CategoriesRow";
+import { CategoriesRow } from "./Categoriesrow";
 export const CategoriesContainer = () => {
   const [categories, setCategories] = useState([]);
   const [numberOfCategories, setNumberOfCategories] = useState(0);
@@ -49,7 +49,7 @@ export const CategoriesContainer = () => {
         </button>
       )}
       {categories.map((category) => (
-        <CategoriesColumn items={category} key={category._id} />
+        <CategoriesRow items={category} key={category._id} />
       ))}
       {/* when no of categories are less than main categories then only right bnt shows up*/}
       {numberOfCategories < categories.length && (
