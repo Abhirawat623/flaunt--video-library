@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { CategoriesRow } from "./Categoriesrow";
+import { CategoriesRow } from "./CategoriesRow";
 export const CategoriesContainer = () => {
   const [categories, setCategories] = useState([]);
   const [numberOfCategories, setNumberOfCategories] = useState(0);
