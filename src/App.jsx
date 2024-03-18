@@ -6,6 +6,7 @@ import { SingleVideo } from "./pages/SingleVideo";
 import { PlaylistPage } from "./pages/PlaylistPage";
 import { LikesPage } from "./pages/LikesPage";
 import { PageNotFound } from "./pages/PageNotFound";
+import "./App.css"
 function App() {
   return (
     <Routes>
