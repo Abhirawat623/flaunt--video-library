@@ -41,8 +41,8 @@ const navigate= useNavigate();
     }
   };
   //login form submit
-  const handleLoginFormSubmit = async (event) => {
-    event.preventDefualt()
+  const handleLoginUserSubmit = async () => {
+    
     setIsLoginModalOpen(false);
     if (isNumberValid && isPasswordValid) {
       const { accessToken, username } = await loginHandler(number, password);
@@ -154,7 +154,7 @@ const navigate= useNavigate();
           className=" text-white bg-green-800 xl:w-80 w-72 p-0.5 
                hover:bg-green-600 hover:text-white h-10 rounded-md
                text-base xl:text-lg cursor-pointer"
-               onClick={handleLoginFormSubmit}
+               onClick={handleLoginUserSubmit}
         >
           Login
         </button>
