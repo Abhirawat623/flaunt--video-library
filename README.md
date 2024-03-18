@@ -85,13 +85,13 @@ Start the server
 ```bash
   npm run dev
 ```
-![unnamed](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/b5e1cdb5-b96c-4ba0-8a46-d9d5aa69dfd3)
 
-![Flaunt Video and 4 more pages - Personal - Microsoft​ Edge 18-03-2024 17_51_59](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/97242c58-bd53-4b9c-a543-cc572f783e33)
+## Screenshot
 
-![Flaunt Video and 4 more pages - Personal - Microsoft​ Edge 18-03-2024 17_51_08](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/0f456d10-36b8-41f3-942e-87cd18d4889c)
+![unnamed](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/4e844727-a434-4bc1-896d-c56414950cea)
+![Flaunt Video and 4 more pages - Personal - Microsoft​ Edge 18-03-2024 17_51_59](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/bcc449d8-ebe8-4c13-b329-0ef3287fcaf2)
+![Flaunt Video and 4 more pages - Personal - Microsoft​ Edge 18-03-2024 17_51_08](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/8dcb1431-359a-4474-a7fc-9318d92d6f7e)
+![Flaunt Video and 4 more pages - Personal - Microsoft​ Edge 18-03-2024 17_50_09](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/409421f5-38ca-428d-a2f8-e78b50020a69)
+![Flaunt Video and 4 more pages - Personal - Microsoft​ Edge 18-03-2024 17_49_40](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/06c1decf-9d41-4c4b-bce8-dca7ea16aec4)
 
-![Flaunt Video and 4 more pages - Personal - Microsoft​ Edge 18-03-2024 17_50_09](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/cdca7519-322f-408c-8c35-e8ba799f6880)
-
-![Flaunt Video and 4 more pages - Personal - Microsoft​ Edge 18-03-2024 17_49_40](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/a1ea7bdc-c6f7-4b99-b287-73ed661f9b4b)
 
