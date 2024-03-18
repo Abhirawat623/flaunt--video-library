@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "vite build --output public",
     "lint": "eslint . --ext js,jsx,ts --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "deployVercel": "push-dir --dir=dist --branch=vercel --cleanup"
