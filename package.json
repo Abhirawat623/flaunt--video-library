@@ -5,17 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-<<<<<<< HEAD
     "build": "npm run build",
-    "lint": "eslint . --ext js,jsx,ts --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-    
-=======
-    "build": "vite build --output public",
-    "lint": "eslint . --ext js,jsx,ts --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "deployVercel": "push-dir --dir=dist --branch=vercel --cleanup"
->>>>>>> 662a4ab3a6b219ee22ee08911ffbc294d8b92f69
+    "lint": "eslint . --ext js,jsx,ts --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
     "alert": "^6.0.1",
