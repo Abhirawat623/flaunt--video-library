@@ -54,7 +54,7 @@
 
 ## Live Link
 # Front End
-- https://flaunt-video-library.vercel.app/
+- https://flaunt-video-library-three.vercel.app/
 # Back End
 - https://flaunt-up-video-library-backend.vercel.app/api/videos
 
@@ -89,9 +89,13 @@ Start the server
 ## Screenshot
 
 ![unnamed](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/4e844727-a434-4bc1-896d-c56414950cea)
+
 ![Flaunt Video and 4 more pages - Personal - Microsoft​ Edge 18-03-2024 17_51_59](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/bcc449d8-ebe8-4c13-b329-0ef3287fcaf2)
+
 ![Flaunt Video and 4 more pages - Personal - Microsoft​ Edge 18-03-2024 17_51_08](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/8dcb1431-359a-4474-a7fc-9318d92d6f7e)
+
 ![Flaunt Video and 4 more pages - Personal - Microsoft​ Edge 18-03-2024 17_50_09](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/409421f5-38ca-428d-a2f8-e78b50020a69)
+
 ![Flaunt Video and 4 more pages - Personal - Microsoft​ Edge 18-03-2024 17_49_40](https://github.com/Abhirawat623/flaunt--video-library/assets/131130116/06c1decf-9d41-4c4b-bce8-dca7ea16aec4)
 
 
