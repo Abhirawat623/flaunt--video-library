@@ -4,12 +4,12 @@ import App from "./App.jsx";
 import { ModalProvider } from "./context/modals-context.jsx";
 import { VideoProvider } from "./context/video-context.jsx";
 import { AuthProvider } from "./context/auth-context.jsx"
-import { HashRouter } from "react-router-dom";
+import { HashRouter as Router} from "react-router-dom";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <HashRouter>
+    <Router>
       <AuthProvider>
       <VideoProvider>
         <ModalProvider>
@@ -17,6 +17,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </ModalProvider>
       </VideoProvider>
       </AuthProvider>
-    </HashRouter>
+    </Router>
   </React.StrictMode>
 );
