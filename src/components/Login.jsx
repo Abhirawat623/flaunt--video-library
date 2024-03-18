@@ -150,10 +150,11 @@ const navigate= useNavigate();
             defaultValue={password}
           />
         </div>
+        
         <button
           className=" text-white bg-green-800 xl:w-80 w-72 p-0.5 
                hover:bg-green-600 hover:text-white h-10 rounded-md
-               text-base xl:text-lg cursor-pointer"
+               text-base xl:text-lg cursor-pointer mt-2"
                onClick={handleLoginUserSubmit}
         >
           Login
@@ -161,7 +162,7 @@ const navigate= useNavigate();
         <button
           className=" text-white bg-yellow-600 xl:w-80 w-72 p-0.5 
                hover:bg-yellow-400 hover:text-black h-10 rounded-md
-               text-base xl:text-lg cursor-pointer"
+               text-base xl:text-lg cursor-pointer mt-1"
                onClick={handleTestUserSubmit}
         >
          Guest Login
