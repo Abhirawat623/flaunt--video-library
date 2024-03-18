@@ -5,7 +5,7 @@ export const PageNotFound = () => {
     <section className="flex items-center justify-center h-screen w-screen ">
       <div className="text-center">
         <img
-          src="/src/assets/404.png"
+          src="https://i.ibb.co/tm3GfQB/404.png"
           alt="not_found"
           className="h-60 xl:h-80 mx-auto my-4 animate-pulse"
         />

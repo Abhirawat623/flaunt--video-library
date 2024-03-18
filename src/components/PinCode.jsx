@@ -53,7 +53,7 @@ else{
   return (
     <div className="flex flex-col items-center justify-center pt-5 z-5 gap-y-4">
        
-      <img src={"/src/assets/Lock.png"} alt="lock" className="xl:h-36 md:h-36 h-24 mx-auto my-2"/>
+      <img src={"https://i.ibb.co/cT0mxtB/lock.png"} alt="lock" className="xl:h-36 md:h-36 h-24 mx-auto my-2"/>
     
       <div className="text-3xl ">Please Set Your Pin</div>
       <div className="flex flex-row justify-center items-center flex-wrap">
