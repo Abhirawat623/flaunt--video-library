@@ -5,7 +5,7 @@
 
 # About
 
- A video library built with Vite+React, here you will find curated list videos on the best smart gadgets, like smart watches, smart phones, best laptops. With features to secure your videos, to creating your custom playlist videoporium has it all.
+ A video library built with Vite+React, here you will find curated list videos on the best smart gadgets, like smart watches, smart phones, best laptops. With features to secure your videos, to creating your custom playlist Flaunt Video Library has it all.
 
 
 # List of features
